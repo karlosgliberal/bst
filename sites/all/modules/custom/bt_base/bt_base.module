@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file bt_base.module
+ * Modulo de utilidades
+ */
+
+/**
+ * Implements hook_init().
+ */
+function bt_base_init() {
+  if (drupal_is_front_page()) {
+    drupal_add_css(drupal_get_path('module', 'foo') . '/foo.css');
+  }
+}

@@ -1,0 +1,188 @@
+From e38114baea2161adab864f22f88915a81a6ff0e3 Mon Sep 17 00:00:00 2001
+From: mkhamash <m.khamash@gmail.com>
+Date: Sun, 9 Mar 2014 18:20:17 +0200
+Subject: [PATCH] Issue #2120849: Decrease Panels IPE CSS & JS specificity to allow HTML5 "button" elements.
+
+---
+ css/panels_dnd.css                         |    2 +-
+ js/display_editor.js                       |    6 +++---
+ panels_ipe/css/panels_ipe-rtl.css          |    4 ++--
+ panels_ipe/css/panels_ipe.css              |   24 ++++++++++++------------
+ panels_ipe/js/panels_ipe.js                |    4 ++--
+ plugins/layouts/flexible/flexible-admin.js |    2 +-
+ 6 files changed, 21 insertions(+), 21 deletions(-)
+
+diff --git a/css/panels_dnd.css b/css/panels_dnd.css
+index 530b359..63c5364 100644
+--- a/css/panels_dnd.css
++++ b/css/panels_dnd.css
+@@ -175,7 +175,7 @@ div.panels-set-title-hide .panel-pane-is-title {
+   margin: 0;
+ }
+ 
+-.panel-portlet .buttons input {
++.panel-portlet .buttons input, .panel-portlet .buttons button {
+   margin: 0;
+   padding: 0;
+   display: inline;
+diff --git a/js/display_editor.js b/js/display_editor.js
+index 40e1146..0918afb 100644
+--- a/js/display_editor.js
++++ b/js/display_editor.js
+@@ -80,7 +80,7 @@ Drupal.Panels.Draggable = {
+   regionId: 'panel-region-',
+ 
+   // What to add to the front of a the id to get the form id for a panel
+-  formId: 'input#edit-',
++  formId: '#edit-',
+ 
+   maxWidth: 250,
+ 
+@@ -492,8 +492,8 @@ Drupal.behaviors.PanelsDisplayEditor = {
+     Drupal.Panels.Draggable.savePositions();
+ 
+     // Bind buttons.
+-    $('input#panels-hide-all', context).click(Drupal.Panels.clickHideAll);
+-    $('input#panels-show-all', context).click(Drupal.Panels.clickShowAll);
++    $('#panels-hide-all', context).click(Drupal.Panels.clickHideAll);
++    $('#panels-show-all', context).click(Drupal.Panels.clickShowAll);
+ 
+     Drupal.Panels.bindClickDelete(context);
+ 
+diff --git a/panels_ipe/css/panels_ipe-rtl.css b/panels_ipe/css/panels_ipe-rtl.css
+index ef78afb..abfc50e 100644
+--- a/panels_ipe/css/panels_ipe-rtl.css
++++ b/panels_ipe/css/panels_ipe-rtl.css
+@@ -49,8 +49,8 @@ div.panels-ipe-control .form-submit {
+   padding: 0 34px 2px 0.8em;
+ }
+ 
+-input#panels-ipe-save,
+-input#panels-ipe-cancel {
++#panels-ipe-save,
++#panels-ipe-cancel {
+   background-position: 86% 0;
+ }
+ 
+diff --git a/panels_ipe/css/panels_ipe.css b/panels_ipe/css/panels_ipe.css
+index ec372c6..ca05b37 100644
+--- a/panels_ipe/css/panels_ipe.css
++++ b/panels_ipe/css/panels_ipe.css
+@@ -380,12 +380,6 @@ div.panels-ipe-control .form-submit {
+   padding: 0 0.8em 2px 34px;
+ }
+ 
+-div.panels-ipe-control input.panels-ipe-save, div.panels-ipe-control input.panels-ipe-cancel,
+-div.panels-ipe-control input.panels-ipe-save:hover, div.panels-ipe-control input.panels-ipe-cancel:hover,
+-div.panels-ipe-control input.panels-ipe-save:active, div.panels-ipe-control input.panels-ipe-cancel:active {
+-  background-repeat: no-repeat;
+-}
+-
+ div.panels-ipe-pseudobutton-container a {
+   height: 33px;
+   padding: 0 0.8em;
+@@ -394,7 +388,7 @@ div.panels-ipe-pseudobutton-container a {
+   text-decoration: none;
+ }
+ 
+-div.panels-ipe-control input.panels-ipe-save {
++div.panels-ipe-control .panels-ipe-save {
+   background-image: url(../images/icon-save.png);
+   background-image: url(../images/icon-save.png), linear-gradient(bottom, #383838 0%, #666666 100%);
+   background-image: url(../images/icon-save.png), -o-linear-gradient(bottom, #383838 0%, #666666 100%);
+@@ -411,7 +405,7 @@ div.panels-ipe-control input.panels-ipe-save {
+   );
+ }
+ 
+-div.panels-ipe-control input.panels-ipe-cancel {
++div.panels-ipe-control .panels-ipe-cancel {
+   background-image: url(../images/icon-close.png);
+   background-image: url(../images/icon-close.png), linear-gradient(bottom, #383838 0%, #666666 100%);
+   background-image: url(../images/icon-close.png), -o-linear-gradient(bottom, #383838 0%, #666666 100%);
+@@ -451,7 +445,7 @@ div.panels-ipe-pseudobutton-container a:hover {
+   color: #FFF;
+ }
+ 
+-div.panels-ipe-control input.panels-ipe-cancel:hover {
++div.panels-ipe-control .panels-ipe-cancel:hover {
+   background-image: url(../images/icon-close.png), linear-gradient(bottom, #3D3D3D 0%, #999999 100%);
+   background-image: url(../images/icon-close.png), -o-linear-gradient(bottom, #3D3D3D 0%, #999999 100%);
+   background-image: url(../images/icon-close.png), -moz-linear-gradient(bottom, #3D3D3D 0%, #999999 100%);
+@@ -467,7 +461,7 @@ div.panels-ipe-control input.panels-ipe-cancel:hover {
+   );
+ }
+ 
+-div.panels-ipe-control input.panels-ipe-save:hover {
++div.panels-ipe-control .panels-ipe-save:hover {
+   background-image: url(../images/icon-save.png), linear-gradient(bottom, #3D3D3D 0%, #999999 100%);
+   background-image: url(../images/icon-save.png), -o-linear-gradient(bottom, #3D3D3D 0%, #999999 100%);
+   background-image: url(../images/icon-save.png), -moz-linear-gradient(bottom, #3D3D3D 0%, #999999 100%);
+@@ -507,7 +501,7 @@ div.panels-ipe-pseudobutton-container a:active {
+   color: #CCC;
+ }
+ 
+-div.panels-ipe-control input.panels-ipe-cancel:active {
++div.panels-ipe-control .panels-ipe-cancel:active {
+   background-image: url(../images/icon-close.png), linear-gradient(bottom, #616161 0%, #333333 100%);
+   background-image: url(../images/icon-close.png), -o-linear-gradient(bottom, #616161 0%, #333333 100%);
+   background-image: url(../images/icon-close.png), -moz-linear-gradient(bottom, #616161 0%, #333333 100%);
+@@ -523,7 +517,7 @@ div.panels-ipe-control input.panels-ipe-cancel:active {
+   );
+ }
+ 
+-div.panels-ipe-control input.panels-ipe-save:active {
++div.panels-ipe-control .panels-ipe-save:active {
+   background-image: url(../images/icon-save.png), linear-gradient(bottom, #616161 0%, #333333 100%);
+   background-image: url(../images/icon-save.png), -o-linear-gradient(bottom, #616161 0%, #333333 100%);
+   background-image: url(../images/icon-save.png), -moz-linear-gradient(bottom, #616161 0%, #333333 100%);
+@@ -539,6 +533,12 @@ div.panels-ipe-control input.panels-ipe-save:active {
+   );
+ }
+ 
++div.panels-ipe-control .panels-ipe-save, div.panels-ipe-control .panels-ipe-cancel,
++div.panels-ipe-control .panels-ipe-save:hover, div.panels-ipe-control .panels-ipe-cancel:hover,
++div.panels-ipe-control .panels-ipe-save:active, div.panels-ipe-control .panels-ipe-cancel:active {
++  background-repeat: no-repeat;
++}
++
+ div.panels-ipe-pseudobutton-container a.panels-ipe-startedit {
+   padding-left: 34px;
+   background: url(../images/icon-configure.png) no-repeat 10px 9px;
+diff --git a/panels_ipe/js/panels_ipe.js b/panels_ipe/js/panels_ipe.js
+index aad076d..b203f5e 100644
+--- a/panels_ipe/js/panels_ipe.js
++++ b/panels_ipe/js/panels_ipe.js
+@@ -215,7 +215,7 @@ function DrupalPanelsIPE(cache_key, cfg) {
+ 
+     $('.panels-ipe-form-container', ipe.control).append(formdata);
+ 
+-    $('input:submit:not(.ajax-processed)', ipe.control).addClass('ajax-processed').each(function() {
++    $('input:submit:not(.ajax-processed), button:not(.ajax-processed)', ipe.control).addClass('ajax-processed').each(function() {
+       var element_settings = {};
+ 
+       element_settings.url = $(this.form).attr('action');
+@@ -285,7 +285,7 @@ function DrupalPanelsIPE(cache_key, cfg) {
+           val += id;
+         }
+       });
+-      $('input[name="panel[pane][' +  region + ']"]', ipe.control).val(val);
++      $('[name="panel[pane][' +  region + ']"]', ipe.control).val(val);
+     });
+   }
+ 
+diff --git a/plugins/layouts/flexible/flexible-admin.js b/plugins/layouts/flexible/flexible-admin.js
+index 910b3c8..2cddd42 100644
+--- a/plugins/layouts/flexible/flexible-admin.js
++++ b/plugins/layouts/flexible/flexible-admin.js
+@@ -17,7 +17,7 @@ Drupal.flexible.fixHeight = function() {
+ Drupal.behaviors.flexibleAdmin = {
+   attach: function(context) {
+     // Show/hide layout manager button
+-    $('input#panels-flexible-toggle-layout:not(.panels-flexible-processed)', context)
++    $('#panels-flexible-toggle-layout:not(.panels-flexible-processed)', context)
+       .addClass('panels-flexible-processed')
+       .click(function() {
+         $('.panel-flexible-admin')
+-- 
+1.7.2.5
+

@@ -86,7 +86,6 @@
  */
 ?>
 <div id="page-wrapper"><div id="page">
-
   <div id="header" class="<?php print $secondary_menu ? 'with-secondary-menu': 'without-secondary-menu'; ?>"><div class="section clearfix">
 
     <?php if ($logo): ?>

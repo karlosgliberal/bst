@@ -471,7 +471,6 @@ function node_admin_nodes() {
   $header['operations'] = array('data' => t('Operations'));
 
   $query = db_select('node', 'n')->extend('PagerDefault')->extend('TableSort');
-  $query->addTag('node_admin_filter');
   node_build_filter_query($query);
 
   if (!user_access('bypass node access')) {

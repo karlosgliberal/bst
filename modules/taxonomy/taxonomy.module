@@ -457,12 +457,7 @@ function taxonomy_vocabulary_save($vocabulary) {
 }
 
 /**
- * Deletes a vocabulary.
- *
- * This will update all Taxonomy fields so that they don't reference the
- * deleted vocabulary. It also will delete fields that have no remaining
- * vocabulary references. All taxonomy terms of the deleted vocabulary
- * will be deleted as well.
+ * Delete a vocabulary.
  *
  * @param $vid
  *   A vocabulary ID.
@@ -753,7 +748,7 @@ function taxonomy_term_delete($tid) {
  * @param term
  *   A taxonomy term object.
  * @return
- *   A $page element suitable for use by drupal_render().
+ *   A $page element suitable for use by drupal_page_render().
  */
 function taxonomy_term_show($term) {
   return taxonomy_term_view_multiple(array($term->tid => $term), 'full');
