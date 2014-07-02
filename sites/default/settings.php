@@ -553,18 +553,8 @@ $conf['404_fast_html'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
 # $conf['allow_authorize_operations'] = FALSE;
 #
 
+if (file_exists(dirname(__FILE__) . '/local_conf.php')) {
+  include_once(dirname(__FILE__) . '/local_conf.php');
+}
 
-$base_url = 'http://bestaker.localhost:8082';
-
-//D6 DB config
-$db_url = 'mysqli://drupaluser@127.0.0.1:33066/bestaker';
-
-//D7 DB config
-$databases = array('default' => array('default' => array(
-    'driver' => 'mysql',
-    'database' => 'bestaker',
-    'username' => 'drupaluser',
-    'password' => '',
-    'host' => '127.0.0.1',
-    'port' => 33066 )));
 
