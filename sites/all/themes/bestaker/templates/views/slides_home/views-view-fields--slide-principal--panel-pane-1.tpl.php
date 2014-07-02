@@ -62,7 +62,7 @@
               <?php print $row->field_field_slide_descripcion_noticia[0]['rendered']['#markup']; ?>
             </div>
             <div class="col-sm-4 col-md-4 boton-apuntate center mt10">
-              <a class="btn btn-blue btn-large" href="<?php print $row->field_field_slide_enlace_noticia[0]['raw']['url']; ?>"><?print $row->field_field_slide_enlace_noticia[0]['raw']['title']; ?></a>
+              <a class="btn btn-blue btn-large" href="<?php print $row->field_field_slide_enlace_noticia[0]['raw']['url']; ?>"><?php print $row->field_field_slide_enlace_noticia[0]['raw']['title']; ?></a>
             </div>
           </div>
         </div>
