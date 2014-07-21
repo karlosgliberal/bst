@@ -68,7 +68,7 @@ function home_image_default_styles() {
 function home_node_info() {
   $items = array(
     'con_bestaker' => array(
-      'name' => t('Con bestaker'),
+      'name' => t('Portada - Con bestaker'),
       'base' => 'node_content',
       'description' => t('Sección de portada "Por qué con Bestaker" '),
       'has_title' => '1',
@@ -76,7 +76,7 @@ function home_node_info() {
       'help' => '',
     ),
     'feeds_portada' => array(
-      'name' => t('Feeds portada'),
+      'name' => t('Portada - Feeds novedades'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
@@ -84,7 +84,7 @@ function home_node_info() {
       'help' => '',
     ),
     'imagen_con_bestaker_' => array(
-      'name' => t('Imagen/video -Con bestaker-'),
+      'name' => t('Portada - Imagen/video -Con bestaker-'),
       'base' => 'node_content',
       'description' => t('Video o imagen para la sección con bestaker'),
       'has_title' => '1',
@@ -100,7 +100,7 @@ function home_node_info() {
       'help' => '',
     ),
     'slide_principal' => array(
-      'name' => t('Slide Principal'),
+      'name' => t('Portada - Slide Principal'),
       'base' => 'node_content',
       'description' => t('Slide principal que se mostrará en la Home'),
       'has_title' => '1',
