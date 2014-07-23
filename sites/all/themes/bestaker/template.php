@@ -1,9 +1,14 @@
 <?php
-
 /**
  * @file
  * template.php
  */
+function bestaker_preprocess_page(&$variables) {
+  if (!drupal_is_front_page()) {
+    $variables['primary_nav'] = FALSE; //menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+  }
+}
+
 
 function phptemplate_menu_item_link($item, $link_item) {
   // Convert anchors in path to proper fragment

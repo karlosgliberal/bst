@@ -1,4 +1,6 @@
 <?php
+module_load_include('inc', 'bt_base', 'bt_base.blocks');
+
 
 /**
  * @file bt_base.module
@@ -12,4 +14,13 @@ function bt_base_init() {
   //if (drupal_is_front_page()) {
   //  drupal_add_css(drupal_get_path('module', 'foo') . '/foo.css');
   //}
+}
+
+function bt_base_theme() {
+  return array(
+    'footer' => array(
+      'path' => drupal_get_path('module', 'bt_base') . '/templates',
+      'template' => 'footer'
+    ),
+  );
 }
