@@ -31,8 +31,9 @@
           <span class="titular-proyectos-home">
           <span class="titular-proyectos-home-dos blue"><?php print t('Proyectos'); ?></span></span> </h3>
         <div class="col-sm-4 col-md-4 mt30 np">
-          <div class="videos-proyectos-wrapper mt20"><img typeof="foaf:Image" src="http://karazan.interzonas.info/sites/default/files/styles/350x/public/<?php print $row->field_field_proyecto_imagen[0]['raw']['filename']; ?>" alt=""></div>
-
+          <div class="videos-proyectos-wrapper mt20">
+            <?php print render($row->field_field_proyecto_imagen); ?>
+          </div>
         </div>
         <div class="col-sm-8 col-md-8 mt30">
           <h3 class="titular-proyectos-item"><?php print $row->node_title; ?></h3>
