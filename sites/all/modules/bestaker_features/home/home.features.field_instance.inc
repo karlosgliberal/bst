@@ -272,98 +272,6 @@ function home_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-proyecto-field_proyecto_descripcion'
-  $field_instances['node-proyecto-field_proyecto_descripcion'] = array(
-    'bundle' => 'proyecto',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Descripción corta del proyecto, esta descripción se verá en la portada del Portal',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_proyecto_descripcion',
-    'label' => 'Descripción',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 3,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 31,
-    ),
-  );
-
-  // Exported field_instance: 'node-proyecto-field_proyecto_imagen'
-  $field_instances['node-proyecto-field_proyecto_imagen'] = array(
-    'bundle' => 'proyecto',
-    'deleted' => 0,
-    'description' => 'Imagen asociada al proyecto ',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_proyecto_imagen',
-    'label' => 'Imagen',
-    'required' => 0,
-    'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
-      'entity_translation_sync' => FALSE,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'image',
-      'settings' => array(
-        'preview_image_style' => 'medium',
-        'progress_indicator' => 'bar',
-      ),
-      'type' => 'image_image',
-      'weight' => 32,
-    ),
-  );
-
   // Exported field_instance: 'node-slide_principal-field_slide_descripcion'
   $field_instances['node-slide_principal-field_slide_descripcion'] = array(
     'bundle' => 'slide_principal',
@@ -699,13 +607,11 @@ function home_field_default_field_instances() {
   t('Contenidos');
   t('Descripción');
   t('Descripción Apuntate');
-  t('Descripción corta del proyecto, esta descripción se verá en la portada del Portal');
   t('Descripción noticia');
   t('Enlace Apuntate');
   t('Enlace al nodo donde esta la información de la reunión  de la sección apuntate ');
   t('Enlace noticia');
   t('Imagen');
-  t('Imagen asociada al proyecto ');
   t('Imagen de fondo para el Slide');
   t('Link');
   t('Texto largo');
