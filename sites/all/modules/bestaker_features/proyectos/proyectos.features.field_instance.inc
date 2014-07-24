@@ -478,7 +478,7 @@ function proyectos_field_default_field_instances() {
     'bundle' => 'hito',
     'default_value' => array(
       0 => array(
-        'value' => 0,
+        'value' => 2,
       ),
     ),
     'deleted' => 0,
@@ -944,7 +944,7 @@ function proyectos_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'group_group',
     'label' => 'Group',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -962,10 +962,11 @@ function proyectos_field_default_field_instances() {
       ),
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'display_label' => 0,
-        'og_hide' => TRUE,
+        'og_hide' => 1,
       ),
       'type' => 'options_onoff',
       'weight' => 0,
