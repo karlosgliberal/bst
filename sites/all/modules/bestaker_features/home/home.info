@@ -17,7 +17,6 @@ dependencies[] = text
 dependencies[] = views
 dependencies[] = views_bootstrap
 dependencies[] = views_content
-dependencies[] = wysiwyg
 dependencies[] = youtube
 features[ctools][] = field_group:field_group:1
 features[ctools][] = page_manager:pages_default:1
