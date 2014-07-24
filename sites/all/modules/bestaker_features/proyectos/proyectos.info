@@ -1,7 +1,7 @@
 name = Proyectos
 description = Aglutina toda la funcionalidad alrededor del tipo de contenido proyecto
 core = 7.x
-package = Features
+package = bestaker
 version = 7.x-1.0
 project = proyectos
 dependencies[] = ctools

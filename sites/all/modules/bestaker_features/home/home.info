@@ -1,7 +1,7 @@
 name = Home
 description = Landing Page
 core = 7.x
-package = Features
+package = bestaker
 version = 7.x-1.0
 project = home
 dependencies[] = features
