@@ -14,7 +14,7 @@ function configuracion_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'admin_theme';
-  $strongarm->value = 'adminimal';
+  $strongarm->value = 'ember';
   $export['admin_theme'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -166,14 +166,14 @@ function configuracion_strongarm() {
     'language' => 'es',
     'name' => 'Spanish',
     'native' => 'Español',
-    'direction' => '0',
-    'enabled' => '1',
-    'plurals' => '0',
+    'direction' => 0,
+    'enabled' => 1,
+    'plurals' => 0,
     'formula' => '',
     'domain' => '',
     'prefix' => 'es',
-    'weight' => '-10',
-    'javascript' => '1uGGM26y7a4PcFSA9m4uRpdMu38Jq1v1ySLi0kSXVR0',
+    'weight' => -10,
+    'javascript' => '',
   );
   $export['language_default'] = $strongarm;
 
