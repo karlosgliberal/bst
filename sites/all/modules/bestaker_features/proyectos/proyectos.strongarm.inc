@@ -600,5 +600,124 @@ function proyectos_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_proyecto'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_equipo_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_equipo_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_equipo_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_equipo_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_equipo_pattern';
+  $strongarm->value = '[node:og_group_ref]/equipo/[node:title]';
+  $export['pathauto_node_equipo_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_equipo_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_equipo_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_hito_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_hito_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_hito_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_hito_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_hito_pattern';
+  $strongarm->value = '[node:og_group_ref]/hito/[node:title]';
+  $export['pathauto_node_hito_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_hito_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_hito_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_noticia_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_noticia_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_noticia_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_noticia_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_noticia_pattern';
+  $strongarm->value = '[node:og_group_ref]/noticia/[node:title]';
+  $export['pathauto_node_noticia_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_noticia_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_noticia_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_proyecto_en_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_proyecto_en_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_proyecto_es_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_proyecto_es_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_proyecto_pattern';
+  $strongarm->value = '[node:title]';
+  $export['pathauto_node_proyecto_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_proyecto_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_proyecto_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_categoria_hito_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_categoria_hito_pattern'] = $strongarm;
+
   return $export;
 }
