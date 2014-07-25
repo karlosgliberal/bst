@@ -1,0 +1,12 @@
+name = inversor
+description = Representa el modelo de datos necesario para realizar la gestión de inversiones
+core = 7.x
+package = bestaker
+version = 7.x-1.0
+project = inversor
+features[features_api][] = api:2
+
+dependencies[] = entity
+
+files[] = inversor.admin.inc
+files[] = ronda.admin.inc

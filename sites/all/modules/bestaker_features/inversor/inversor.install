@@ -1,0 +1,176 @@
+<?php
+/**
+ * @file
+ * Install, update, and uninstall functions for orders
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function inversor_schema() {
+  $schema = array();
+
+  $schema['bt_inversores'] = array(
+    'description' => 'Inversor',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Primary Key',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'tipo_identificacion' => array(
+        'description' => 'Tipo de identificación',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'identificacion' => array(
+        'description' => 'Identificación',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => FALSE,
+      ),
+      'nombre' => array(
+        'description' => 'Nombre',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => FALSE,
+      ),
+      'apellidos' => array(
+        'description' => 'Apellidos',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => FALSE,
+      ),
+      'email' => array(
+        'description' => 'Correo electrónico',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => FALSE,
+      ),
+      'direccion' => array(
+        'description' => 'Dirección postal',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'poblacion' => array(
+        'description' => 'Población',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => FALSE,
+      ),
+      'cp' => array(
+        'description' => 'Código postal',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => FALSE,
+      ),
+      'provincia' => array(
+        'description' => 'Provincia',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => FALSE,
+      ),
+      'newsletter' => array(
+        'description' => 'Desea recibir información',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'estado_civil' => array(
+        'description' => 'Estado civil',
+        'type' => 'varchar',
+        'length' => 25,
+        'not null' => FALSE,
+      ),
+      'regimen' => array(
+        'description' => 'Tipo de régimen',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => FALSE,
+      ),
+      'nombre_conyuge' => array(
+        'description' => 'Nombre y apellidos del cónyuge',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'invertir_como_empresa' => array(
+        'description' => '¿Desea invertir como persona física o como persona jurídica (empresa)?',
+        'type' => 'varchar',
+        'length' => 20,
+        'not null' => TRUE,
+      ),
+      'nombre_empresa' => array(
+        'description' => 'Empresa (Nombre completo y tipo de sociedad)',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'domicilio_social' => array(
+        'description' => 'Domicilio social',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'cif' => array(
+        'description' => 'CIF',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => FALSE,
+      ),
+      'created' => array(
+        'description' => 'Created timestamp',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+      'changed' => array(
+        'description' => 'Changed timestamp',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'identificacion_uk' => array('identificacion'),
+      'cif_uk' => array('cif'),
+    ),
+  );
+
+  $schema['bt_ronda_inversion'] = array(
+    'description' => 'Ronda de inversión',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Primary Key',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'nombre' => array(
+        'description' => 'Nombre de la ronda de inversión',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+      'descripcion' => array(
+        'description' => 'Descripción de la ronda de inversión',
+        'type' => 'text',
+        'size' => 'normal',
+        'not null' => FALSE,
+      ),
+      'created' => array(
+        'description' => 'Created timestamp',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+      'changed' => array(
+        'description' => 'Changed timestamp',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}

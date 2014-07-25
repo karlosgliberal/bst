@@ -1,0 +1,391 @@
+<?php
+/**
+ * Implements hook_entity_info().
+ */
+function inversor_entity_info() {
+  $inversores_entity_info['inversor'] = array(
+    'label' => t('Inversor'),
+    'label callback' => 'inversor_label_callback',
+    'entity class' => 'Inversor',
+    'controller class' => 'InversorController',
+    'base table' => 'bt_inversores',
+    'module' => 'inversor',
+    'fieldable' => TRUE,
+    'entity keys' => array(
+      'id' => 'id',
+    ),
+    'uri callback' => 'entity_class_uri',
+    'static cache' => TRUE,
+    'access callback' => 'inversor_access_callback',
+    'bundles' => array(
+      'inversor' => array(
+        'label' => 'Inversores',
+        'admin' => array(
+          'path' => 'admin/structure/inversor/manage',
+          'access arguments' => array('administer inversor entities'),
+        ),
+      ),
+    ),
+    'admin ui' => array(
+      'path' => 'admin/content/inversores',
+      'file' => 'inversor.admin.inc',
+      'controller class' => 'InversorUIController',
+    ),
+  );
+
+  $inversores_entity_info['ronda_inversion'] = array(
+    'label' => t('Ronda de inversión'),
+    'label callback' => 'ronda_label_callback',
+    'entity class' => 'Ronda',
+    'controller class' => 'RondaController',
+    'base table' => 'bt_ronda_inversion',
+    'module' => 'inversor',
+    'fieldable' => TRUE,
+    'entity keys' => array(
+      'id' => 'id',
+    ),
+    'uri callback' => 'entity_class_uri',
+    'static cache' => TRUE,
+    'access callback' => 'ronda_access_callback',
+    'bundles' => array(
+      'ronda_inversion' => array(
+        'label' => 'Rondas de financiación',
+        'admin' => array(
+          'path' => 'admin/structure/ronda_inversion/manage',
+          'access arguments' => array('administer ronda entities'),
+        ),
+      ),
+    ),
+    'admin ui' => array(
+      'path' => 'admin/content/rondas',
+      'file' => 'ronda.admin.inc',
+      'controller class' => 'RondaUIController',
+    ),
+  );
+
+  return $inversores_entity_info;
+}
+
+/**
+ * Implements hook_menu().
+ */
+function inversor_menu() {
+  $items = array();
+
+  $items['inversor/%inversor'] = array(
+    'title' => 'Inversor',
+    'page callback' => 'inversor_view_entity',
+    'page arguments' => array(1),
+    'access callback' => 'inversor_access_menu_callback',
+    'access arguments' => array('view', 1),
+  );
+  $items['admin/structure/inversor'] = array(
+    'title' => 'Inversores Fields',
+    'access arguments' => array('administer inversor entities'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  $items['ronda/%ronda'] = array(
+    'title' => 'Ronda',
+    'page callback' => 'ronda_view_entity',
+    'page arguments' => array(1),
+    'access callback' => 'ronda_access_menu_callback',
+    'access arguments' => array('view', 1),
+  );
+  $items['admin/structure/ronda_inversion'] = array(
+    'title' => 'Ronda Fields',
+    'access arguments' => array('administer ronda entities'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+function inversor_permission() {
+  return array(
+    'administer inversor entities' => array(
+      'title' => t('Administer inversores'),
+    ),
+    'view inversor entities' => array(
+      'title' => t('View Inversor'),
+      'description' => t('Allows a user to view the Inversor entities.'),
+    ),
+    'create inversor entities' => array(
+      'title' => t('Create Inversor Entities'),
+      'description' => t('Allows a user to create Inversor entities.'),
+    ),
+    'edit inversor entities' => array(
+      'title' => t('Edit Inversor Entities'),
+      'description' => t('Allows a user to edit Inversor entities.'),
+    ),
+    'delete inversor entities' => array(
+      'title' => t('Delete Inversor Entities'),
+      'description' => t('Allows a user to delete Inversor entities.'),
+    ),
+    'administer ronda entities' => array(
+      'title' => t('Administer rondas'),
+    ),
+    'view ronda entities' => array(
+      'title' => t('View Ronda'),
+      'description' => t('Allows a user to view the Ronda entities.'),
+    ),
+    'create ronda entities' => array(
+      'title' => t('Create Ronda Entities'),
+      'description' => t('Allows a user to create Ronda entities.'),
+    ),
+    'edit ronda entities' => array(
+      'title' => t('Edit Ronda Entities'),
+      'description' => t('Allows a user to edit Ronda entities.'),
+    ),
+    'delete ronda entities' => array(
+      'title' => t('Delete Ronda Entities'),
+      'description' => t('Allows a user to delete Ronda entities.'),
+    ),
+  );
+}
+
+/**
+ * Check access permission for Inversor Entity UI.
+ */
+function inversor_access_menu_callback($op, $inversor = NULL, $account = NULL) {
+  switch ($op) {
+    case 'view':
+      return user_access('view inversor entities', $account);
+
+    case 'create':
+      return user_access('create inversor entities', $account);
+
+    case 'update':
+      return user_access('edit inversor entities', $account);
+
+    case 'delete':
+      return user_access('delete inversor entities', $account);
+  }
+
+  return FALSE;
+}
+
+/**
+ * Access callback for the entity API.
+ */
+function inversor_access_callback($op, $type = NULL, $account = NULL) {
+  return user_access('administer inversor entities', $account);
+}
+
+/**
+ * Implements hook_theme().
+ */
+function inversor_theme() {
+  return array(
+    'inversor_full' => array(
+      'template' => 'inversor',
+    ),
+    'ronda_full' => array(
+      'template' => 'ronda',
+    )
+  );
+}
+
+/**
+ * Menu autoloader for /coupon.
+ */
+function inversor_load($id, $reset = FALSE) {
+  $inversor = inversor_load_multiple(array($id), array(), $reset);
+  return reset($inversor);
+}
+
+/**
+ * Load multiple coupons based on certain conditions.
+ */
+function inversor_load_multiple($ids = array(), $conditions = array(), $reset = FALSE) {
+  return entity_load('inversor', $ids, $conditions, $reset);
+}
+
+/**
+ * Saves inversor to database.
+ */
+function inversor_save(Inversor $inversor) {
+  return $inversor->save();
+}
+
+/**
+ * Deletes a inversor.
+ */
+function inversor_delete(Inversor $inversor) {
+  $inversor->delete();
+}
+
+/**
+ * Delete multiple inversor.
+ */
+function inversor_delete_multiple(array $inversor_ids) {
+  entity_get_controller('inversor')->delete($inversor_ids);
+}
+
+/**
+ * View for /inversor/<inversor_id> page.
+ */
+
+function inversor_view_entity(Inversor $inversor) {
+  drupal_set_title($inversor->getLabel());
+  $inversor_output = theme('inversor_full', array('inversor' => $inversor));
+  return $inversor_output;
+}
+
+/**
+ * Label callback for inversor
+ */
+function inversor_label_callback(Inversor $inversor) {
+  return $inversor->getLabel();
+}
+
+/**
+ * Custom controller for the inversor entity.
+ */
+class InversorController extends EntityAPIController {
+
+  /**
+   * Override the save method.
+   */
+  public function save($entity, DatabaseTransaction $transaction = NULL) {
+    if (isset($entity->is_new)) {
+      $entity->created = REQUEST_TIME;
+    }
+
+    $entity->changed = REQUEST_TIME;
+    return parent::save($entity, $transaction);
+  }
+}
+
+/**
+ * Inversor custom entity class.
+ */
+class Inversor extends Entity {
+  protected function defaultUri() {
+    return array('path' => 'inversor/' . $this->identifier());
+  }
+
+  public function getLabel () {
+    if (isset($this->is_new)) return "";
+
+    if (empty($this->invertir_como_empresa) || $this->invertir_como_empresa == 'persona_fisica')
+      return $this->identificacion . " - " . $this->nombre . " " . $this->apellidos;
+    else
+      return $this->cif . " - " . $this->nombre_empresa;
+  }
+}
+
+
+/**
+ * Check access permission for Ronda Entity UI.
+ */
+function ronda_access_menu_callback($op, $ronda = NULL, $account = NULL) {
+  switch ($op) {
+    case 'view':
+      return user_access('view ronda entities', $account);
+
+    case 'create':
+      return user_access('create ronda entities', $account);
+
+    case 'update':
+      return user_access('edit ronda entities', $account);
+
+    case 'delete':
+      return user_access('delete ronda entities', $account);
+  }
+
+  return FALSE;
+}
+
+/**
+ * Access callback for the entity API.
+ */
+function ronda_access_callback($op, $type = NULL, $account = NULL) {
+  return user_access('administer ronda entities', $account);
+}
+
+/**
+ * Menu autoloader for /ronda.
+ */
+function ronda_load($id, $reset = FALSE) {
+  $ronda = ronda_load_multiple(array($id), array(), $reset);
+  return reset($ronda);
+}
+
+/**
+ * Load multiple rondas based on certain conditions.
+ */
+function ronda_load_multiple($ids = array(), $conditions = array(), $reset = FALSE) {
+  return entity_load('ronda_inversion', $ids, $conditions, $reset);
+}
+
+/**
+ * Saves ronda to database.
+ */
+function ronda_save(Ronda $ronda) {
+  return $ronda->save();
+}
+
+/**
+ * Deletes a ronda.
+ */
+function ronda_delete(Ronda $ronda) {
+  $ronda->delete();
+}
+
+/**
+ * Delete multiple inversor.
+ */
+function ronda_delete_multiple(array $ronda_ids) {
+  entity_get_controller('ronda_inversion')->delete($ronda_ids);
+}
+
+/**
+ * View for /ronda/<ronda_id> page.
+ */
+
+function ronda_view_entity(Ronda $ronda) {
+  drupal_set_title($ronda->getLabel());
+  $ronda_output = theme('ronda_full', array('ronda' => $ronda));
+  return $ronda_output;
+}
+
+/**
+ * Label callback for inversor
+ */
+function ronda_label_callback(Ronda $ronda) {
+  return $ronda->getLabel();
+}
+
+/**
+ * Custom controller for the ronda entity.
+ */
+class RondaController extends EntityAPIController {
+
+  /**
+   * Override the save method.
+   */
+  public function save($entity, DatabaseTransaction $transaction = NULL) {
+    if (isset($entity->is_new)) {
+      $entity->created = REQUEST_TIME;
+    }
+
+    $entity->changed = REQUEST_TIME;
+    return parent::save($entity, $transaction);
+  }
+}
+
+
+/**
+ * Ronda custom entity class.
+ */
+class Ronda extends Entity {
+  protected function defaultUri() {
+    return array('path' => 'ronda/' . $this->identifier());
+  }
+
+  public function getLabel () {
+    if (isset($this->is_new)) return "";
+
+    return $this->nombre;
+  }
+}
