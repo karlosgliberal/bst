@@ -31,6 +31,24 @@ function inversor_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['style_plugin'] = 'table';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['label'] = 'Add ronda';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<ul class="action-links">
+<li><a href="/admin/content/rondas/add">Add ronda de inversión</a></li>
+</ul>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No hay resultados';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No hay rondas de financiación que cumplan los criterios de búsqueda';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Ronda de inversión: Ronda de inversión ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'bt_ronda_inversion';
@@ -85,7 +103,7 @@ function inversor_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/workbench/content/rondas';
+  $handler->display->display_options['path'] = 'admin/workbench/rondas';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Rondas de financiación';
   $handler->display->display_options['menu']['weight'] = '12';
@@ -107,6 +125,12 @@ function inversor_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Add ronda'),
+    t('<ul class="action-links">
+<li><a href="/admin/content/rondas/add">Add ronda de inversión</a></li>
+</ul>'),
+    t('No hay resultados'),
+    t('No hay rondas de financiación que cumplan los criterios de búsqueda'),
     t('.'),
     t(','),
     t('Nombre'),
@@ -206,7 +230,16 @@ function inversor_views_default_views() {
   $handler->display->display_options['header']['area']['content'] = '<ul class="action-links">
 	      <li><a href="/admin/content/inversores/add">Añadir inversor</a></li>
         </ul>';
-  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['header']['area']['tokenize'] = TRUE;
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['label'] = 'No hay datos';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No hay inversores que cumplan los criterios de búsqueda';
+  $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
   /* Field: Inversor: Inversor ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'bt_inversores';
@@ -350,11 +383,10 @@ function inversor_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'admin/workbench/content/inversores';
+  $handler->display->display_options['path'] = 'admin/workbench/inversores';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Inversores';
   $handler->display->display_options['menu']['weight'] = '11';
-  $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['inversores'] = array(
@@ -377,6 +409,8 @@ function inversor_views_default_views() {
     t('<ul class="action-links">
 	      <li><a href="/admin/content/inversores/add">Añadir inversor</a></li>
         </ul>'),
+    t('No hay datos'),
+    t('No hay inversores que cumplan los criterios de búsqueda'),
     t('.'),
     t(','),
     t('Identificación'),
