@@ -1,5 +1,11 @@
 <?php
 /**
+ * @file
+ * Code for the inversor feature.
+ */
+
+include_once 'inversor.features.inc';
+/**
  * Implements hook_entity_info().
  */
 function inversor_entity_info() {
