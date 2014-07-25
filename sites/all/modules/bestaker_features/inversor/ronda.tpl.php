@@ -31,9 +31,12 @@
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-    <pre><?php
-      print_r($ronda);
-    ?>
-      </pre>
+    <dl class="dl-horizontal">
+      <dt>ID:</dt><dd><?php print $ronda->id; ?></dd>
+      <dt>nombre:</dt><dd><?php print $ronda->nombre; ?></dd>
+      <dt>descripcion:</dt><dd><?php print $ronda->descripcion; ?></dd>
+      <dt>created:</dt><dd><?php print $ronda->created; ?></dd>
+      <dt>changed:</dt><dd><?php print $ronda->changed; ?></dd>
+    </dl>
   </div>
 </div>

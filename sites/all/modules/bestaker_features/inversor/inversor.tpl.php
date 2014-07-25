@@ -31,9 +31,27 @@
 ?>
 <div class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <div class="content"<?php print $content_attributes; ?>>
-    <pre><?php
-      print_r($inversor);
-    ?>
-      </pre>
+    <dl class="dl-horizontal">
+      <dt>ID:</dt><dd><?php print $inversor->id; ?></dd>
+      <dt>tipo_identificacion:</dt><dd><?php print $inversor->tipo_identificacion; ?></dd>
+      <dt>identificacion:</dt><dd><?php print $inversor->identificacion; ?></dd>
+      <dt>nombre:</dt><dd><?php print $inversor->nombre; ?></dd>
+      <dt>apellidos:</dt><dd><?php print $inversor->apellidos; ?></dd>
+      <dt>email:</dt><dd><?php print $inversor->email; ?></dd>
+      <dt>direccion:</dt><dd><?php print $inversor->direccion; ?></dd>
+      <dt>poblacion:</dt><dd><?php print $inversor->poblacion; ?></dd>
+      <dt>cp:</dt><dd><?php print $inversor->cp; ?></dd>
+      <dt>provincia:</dt><dd><?php print $inversor->provincia; ?></dd>
+      <dt>newsletter:</dt><dd><?php print $inversor->newsletter; ?></dd>
+      <dt>estado_civil:</dt><dd><?php print $inversor->estado_civil; ?></dd>
+      <dt>regimen:</dt><dd><?php print $inversor->regimen; ?></dd>
+      <dt>nombre_conyuge:</dt><dd><?php print $inversor->nombre_conyuge; ?></dd>
+      <dt>invertir_como_empresa:</dt><dd><?php print $inversor->invertir_como_empresa; ?></dd>
+      <dt>nombre_empresa:</dt><dd><?php print $inversor->nombre_empresa; ?></dd>
+      <dt>domicilio_social:</dt><dd><?php print $inversor->domicilio_social; ?></dd>
+      <dt>cif:</dt><dd><?php print $inversor->cif; ?></dd>
+      <dt>created:</dt><dd><?php print $inversor->created; ?></dd>
+      <dt>changed:</dt><dd><?php print $inversor->changed; ?></dd>
+    </dl>
   </div>
 </div>

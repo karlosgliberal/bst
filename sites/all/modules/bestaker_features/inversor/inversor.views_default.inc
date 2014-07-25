@@ -173,12 +173,13 @@ function inversor_views_default_views() {
     'apellidos' => 'apellidos',
     'email' => 'email',
     'nothing' => 'nothing',
+    'created' => 'created',
   );
   $handler->display->display_options['style_options']['default'] = 'id';
   $handler->display->display_options['style_options']['info'] = array(
     'id' => array(
       'sortable' => 1,
-      'default_sort_order' => 'asc',
+      'default_sort_order' => 'desc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -221,6 +222,13 @@ function inversor_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'created' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -245,7 +253,6 @@ function inversor_views_default_views() {
   $handler->display->display_options['fields']['id']['table'] = 'bt_inversores';
   $handler->display->display_options['fields']['id']['field'] = 'id';
   $handler->display->display_options['fields']['id']['label'] = '';
-  $handler->display->display_options['fields']['id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['id']['alter']['path'] = 'admin/content/inversores/manage/[id]';
   $handler->display->display_options['fields']['id']['element_label_colon'] = FALSE;
   /* Field: Inversor: URL */
