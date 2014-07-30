@@ -42,6 +42,11 @@ function ronda_inversion_form($form, &$form_state, $ronda, $op = 'edit') {
     '#default_value' => empty($ronda->descripcion) ? '' : $ronda->descripcion,
   );
 
+  // Add the field related form elements.
+  $form_state['ronda_inversion'] = $ronda;
+  field_attach_form('ronda_inversion', $ronda, $form, $form_state);
+
+
   $form['actions'] = array('#type' => 'actions');
   $form['actions']['submit'] = array(
     '#type' => 'submit',
@@ -58,5 +63,5 @@ function ronda_inversion_form($form, &$form_state, $ronda, $op = 'edit') {
 function ronda_inversion_form_submit(&$form, &$form_state) {
   $ronda = entity_ui_form_submit_build_entity($form, $form_state);
   $ronda->save();
-  $form_state['redirect'] = 'admin/workbench/content/rondas';
+  $form_state['redirect'] = 'admin/workbench/rondas';
 }

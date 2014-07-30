@@ -34,7 +34,7 @@ function inversor_entity_info() {
     ),
     'admin ui' => array(
       'path' => 'admin/content/inversores',
-      'file' => 'inversor.admin.inc',
+      'file' => 'admin/inversor.admin.inc',
       'controller class' => 'InversorUIController',
     ),
   );
@@ -64,7 +64,7 @@ function inversor_entity_info() {
     ),
     'admin ui' => array(
       'path' => 'admin/content/rondas',
-      'file' => 'ronda.admin.inc',
+      'file' => 'admin/ronda.admin.inc',
       'controller class' => 'RondaUIController',
     ),
   );
@@ -183,10 +183,10 @@ function inversor_access_callback($op, $type = NULL, $account = NULL) {
 function inversor_theme() {
   return array(
     'inversor_full' => array(
-      'template' => 'inversor',
+      'template' => 'templates/inversor',
     ),
     'ronda_full' => array(
-      'template' => 'ronda',
+      'template' => 'templates/ronda',
     )
   );
 }
@@ -243,43 +243,6 @@ function inversor_view_entity(Inversor $inversor) {
 function inversor_label_callback(Inversor $inversor) {
   return $inversor->getLabel();
 }
-
-/**
- * Custom controller for the inversor entity.
- */
-class InversorController extends EntityAPIController {
-
-  /**
-   * Override the save method.
-   */
-  public function save($entity, DatabaseTransaction $transaction = NULL) {
-    if (isset($entity->is_new)) {
-      $entity->created = REQUEST_TIME;
-    }
-
-    $entity->changed = REQUEST_TIME;
-    return parent::save($entity, $transaction);
-  }
-}
-
-/**
- * Inversor custom entity class.
- */
-class Inversor extends Entity {
-  protected function defaultUri() {
-    return array('path' => 'inversor/' . $this->identifier());
-  }
-
-  public function getLabel () {
-    if (isset($this->is_new)) return "";
-
-    if (empty($this->invertir_como_empresa) || $this->invertir_como_empresa == 'persona_fisica')
-      return $this->identificacion . " - " . $this->nombre . " " . $this->apellidos;
-    else
-      return $this->cif . " - " . $this->nombre_empresa;
-  }
-}
-
 
 /**
  * Check access permission for Ronda Entity UI.
@@ -351,7 +314,11 @@ function ronda_delete_multiple(array $ronda_ids) {
 
 function ronda_view_entity(Ronda $ronda) {
   drupal_set_title($ronda->getLabel());
-  $ronda_output = theme('ronda_full', array('ronda' => $ronda));
+
+  $controller = entity_get_controller('ronda_inversion');
+  $content = $controller->view(array($ronda->id => $ronda));
+  $ronda_output = theme('ronda_full', array('ronda' => $ronda, 'content' => $content));
+
   return $ronda_output;
 }
 
@@ -362,36 +329,3 @@ function ronda_label_callback(Ronda $ronda) {
   return $ronda->getLabel();
 }
 
-/**
- * Custom controller for the ronda entity.
- */
-class RondaController extends EntityAPIController {
-
-  /**
-   * Override the save method.
-   */
-  public function save($entity, DatabaseTransaction $transaction = NULL) {
-    if (isset($entity->is_new)) {
-      $entity->created = REQUEST_TIME;
-    }
-
-    $entity->changed = REQUEST_TIME;
-    return parent::save($entity, $transaction);
-  }
-}
-
-
-/**
- * Ronda custom entity class.
- */
-class Ronda extends Entity {
-  protected function defaultUri() {
-    return array('path' => 'ronda/' . $this->identifier());
-  }
-
-  public function getLabel () {
-    if (isset($this->is_new)) return "";
-
-    return $this->nombre;
-  }
-}

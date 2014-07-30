@@ -172,5 +172,65 @@ function inversor_schema() {
     'primary key' => array('id'),
   );
 
+  $schema['bt_inversion'] = array(
+    'description' => 'Inversión de un inversor en una ronda de financiación',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Primary Key',
+        'type' => 'serial',
+        'not null' => TRUE,
+      ),
+      'ronda_id' => array(
+        'description' => 'Id de la ronda de inversión',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ),
+      'inversor_id' => array(
+        'description' => 'Id del inversor',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+      ),
+      'importe' => array(
+        'description' => 'Importe de la inversión',
+        'type' => 'float',
+        'not null' => TRUE,
+      ),
+      'validada' => array(
+        'description' => 'Indica si la inversión esta o no validada',
+        'type' => 'int',
+        'not null' => TRUE,
+        'unsigned' => TRUE,
+        'default' => 0
+      ),
+      'created' => array(
+        'description' => 'Created timestamp',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+      'changed' => array(
+        'description' => 'Changed timestamp',
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'inversor_id_inx' => array('inversor_id'),
+      'ronda_id_inx' => array('ronda_id'),
+    ),
+    'foreign keys' => array(
+      'inversor_fk' => array(
+        'table' => 'bt_inversores',
+        'columns' => array('inversor_id' => 'id'),
+      ),
+      'ronda_fk' => array(
+        'table' => 'bt_ronda_inversion',
+        'columns' => array('ronda_id' => 'id'),
+      ),
+    ),
+  );
+
   return $schema;
 }

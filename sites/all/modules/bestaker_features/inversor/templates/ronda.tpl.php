@@ -1,6 +1,10 @@
 <?php
 
 /**
+ *
+ * https://www.drupal.org/node/1238606
+ * http://www.trellon.com/content/blog/creating-own-entities-entity-api
+ *
  * @file
  * A basic template for model entities
  *
@@ -38,5 +42,6 @@
       <dt>created:</dt><dd><?php print $ronda->created; ?></dd>
       <dt>changed:</dt><dd><?php print $ronda->changed; ?></dd>
     </dl>
+    <?php print render($content); ?>
   </div>
 </div>

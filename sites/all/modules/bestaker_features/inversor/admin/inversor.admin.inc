@@ -174,6 +174,10 @@ function inversor_form($form, &$form_state, $inversor, $op = 'edit') {
     '#maxlength' => 50,
   );
 
+  // Add the field related form elements.
+  $form_state['inversor'] = $inversor;
+  field_attach_form('inversor', $inversor, $form, $form_state);
+
   $form['actions'] = array('#type' => 'actions');
   $form['actions']['submit'] = array(
     '#type' => 'submit',
@@ -190,5 +194,5 @@ function inversor_form($form, &$form_state, $inversor, $op = 'edit') {
 function inversor_form_submit(&$form, &$form_state) {
   $inversor = entity_ui_form_submit_build_entity($form, $form_state);
   $inversor->save();
-  $form_state['redirect'] = 'admin/workbench/content/inversores';
+  $form_state['redirect'] = 'admin/workbench/inversores';
 }
