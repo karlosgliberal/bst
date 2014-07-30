@@ -45,7 +45,7 @@ function proyectos_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'flexible:home';
+  $display->layout = 'flexible:layout_landing_proyecto';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
