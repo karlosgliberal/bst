@@ -71,6 +71,13 @@ function inversor_views_default_views() {
   $handler->display->display_options['fields']['nombre']['field'] = 'nombre';
   $handler->display->display_options['fields']['nombre']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nombre']['alter']['path'] = '[url]';
+  /* Field: Ronda de inversión: Proyecto */
+  $handler->display->display_options['fields']['field_ronda_proyecto']['id'] = 'field_ronda_proyecto';
+  $handler->display->display_options['fields']['field_ronda_proyecto']['table'] = 'field_data_field_ronda_proyecto';
+  $handler->display->display_options['fields']['field_ronda_proyecto']['field'] = 'field_ronda_proyecto';
+  $handler->display->display_options['fields']['field_ronda_proyecto']['settings'] = array(
+    'link' => 1,
+  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -134,6 +141,7 @@ function inversor_views_default_views() {
     t('.'),
     t(','),
     t('Nombre'),
+    t('Proyecto'),
     t('Operaciones'),
     t('<a href=\'/admin/content/rondas/manage/[id]\'>Editar</a> - 
 <a href=\'/admin/content/rondas/manage/[id]/delete?destination=admin/workbench/content/rondas\'>Eliminar</a>'),

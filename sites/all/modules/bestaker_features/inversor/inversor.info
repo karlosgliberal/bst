@@ -11,7 +11,6 @@ features[features_api][] = api:2
 features[views_view][] = bt_admin_rondas
 features[views_view][] = inversores
 features_exclude[dependencies][ctools] = ctools
-
 files[] = includes/inversor.model.inc
 files[] = admin/inversor.admin.inc
 files[] = admin/ronda.admin.inc
