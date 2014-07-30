@@ -396,10 +396,10 @@ function proyectos_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '4',
+          'weight' => '8',
         ),
         'language' => array(
-          'weight' => '1',
+          'weight' => '2',
         ),
       ),
       'display' => array(),

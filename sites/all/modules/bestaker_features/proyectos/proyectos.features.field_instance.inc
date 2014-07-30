@@ -829,7 +829,7 @@ function proyectos_field_default_field_instances() {
     'bundle' => 'proyecto',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Descripción corta del proyecto, esta descripción se verá en la portada del Portal',
+    'description' => 'Descripción corta del proyecto, esta descripción se verá en la portada del Portal y en el deepbanner de la ficha del proyecto',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -846,8 +846,9 @@ function proyectos_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
     'field_name' => 'field_proyecto_descripcion',
-    'label' => 'Descripción',
+    'label' => 'Descripción corta',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -861,7 +862,49 @@ function proyectos_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-proyecto-field_proyecto_descripcion_larga'
+  $field_instances['node-proyecto-field_proyecto_descripcion_larga'] = array(
+    'bundle' => 'proyecto',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Descripción larga del proyecto para la ficha del mismo. Normalmente incluirá un video y un texto explicativo del proyecto con una serie de bullets',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_proyecto_descripcion_larga',
+    'label' => 'Descripción larga',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
     ),
   );
 
@@ -869,16 +912,12 @@ function proyectos_field_default_field_instances() {
   $field_instances['node-proyecto-field_proyecto_imagen'] = array(
     'bundle' => 'proyecto',
     'deleted' => 0,
-    'description' => 'Imagen asociada al proyecto ',
+    'description' => 'Imagen asociada al proyecto a utilizar en listados y homes. Lo óptimo es que sea una imagen con proporciones 4x3',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -890,7 +929,7 @@ function proyectos_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_proyecto_imagen',
-    'label' => 'Imagen',
+    'label' => 'Imagen Listados',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
@@ -912,7 +951,103 @@ function proyectos_field_default_field_instances() {
         'progress_indicator' => 'bar',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-proyecto-field_proyecto_imagen_deep'
+  $field_instances['node-proyecto-field_proyecto_imagen_deep'] = array(
+    'bundle' => 'proyecto',
+    'deleted' => 0,
+    'description' => 'Imagen usada para el deepbanner de la ficha del proyecto. Las dimensiones óptimas son 1280x350 pixels',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_proyecto_imagen_deep',
+    'label' => 'Imagen deepbanner',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'proyecto/deepbanner',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-proyecto-field_proyecto_pdf'
+  $field_instances['node-proyecto-field_proyecto_pdf'] = array(
+    'bundle' => 'proyecto',
+    'deleted' => 0,
+    'description' => 'Fichero explicativo del proyecto en formato PDF',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_url_plain',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_proyecto_pdf',
+    'label' => 'Ficha en PDF',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => 0,
+      'file_directory' => 'proyecto/fichas',
+      'file_extensions' => 'pdf',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 5,
     ),
   );
 
@@ -969,7 +1104,7 @@ function proyectos_field_default_field_instances() {
         'og_hide' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 0,
+      'weight' => 1,
     ),
   );
 
@@ -1014,7 +1149,7 @@ function proyectos_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => -5,
+      'weight' => 0,
     ),
   );
 
@@ -1023,17 +1158,24 @@ function proyectos_field_default_field_instances() {
   t('Cargo');
   t('Categoría');
   t('Control de acceso');
-  t('Descripción');
-  t('Descripción corta del proyecto, esta descripción se verá en la portada del Portal');
+  t('Descripción corta');
+  t('Descripción corta del proyecto, esta descripción se verá en la portada del Portal y en el deepbanner de la ficha del proyecto');
+  t('Descripción larga');
+  t('Descripción larga del proyecto para la ficha del mismo. Normalmente incluirá un video y un texto explicativo del proyecto con una serie de bullets');
   t('Determine if this is an OG group.');
   t('Dirección donde aparece la noticia. Incluir el http:// por delante.');
   t('Entradilla');
   t('Fecha');
   t('Fecha de aparición de la noticia.');
+  t('Ficha en PDF');
+  t('Fichero explicativo del proyecto en formato PDF');
   t('Foto');
   t('Group');
   t('Imagen');
-  t('Imagen asociada al proyecto ');
+  t('Imagen Listados');
+  t('Imagen asociada al proyecto a utilizar en listados y homes. Lo óptimo es que sea una imagen con proporciones 4x3');
+  t('Imagen deepbanner');
+  t('Imagen usada para el deepbanner de la ficha del proyecto. Las dimensiones óptimas son 1280x350 pixels');
   t('Linked-in');
   t('Medio');
   t('Medio en el que ha aparecido la noticia');
