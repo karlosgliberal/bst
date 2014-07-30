@@ -9,6 +9,9 @@ function bestaker_preprocess_page(&$variables) {
   }
 }
 
+function bestaker_preprocess_node(&$vars, $hook) {
+  $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__'. $vars['view_mode'];
+}
 
 function phptemplate_menu_item_link($item, $link_item) {
   // Convert anchors in path to proper fragment
