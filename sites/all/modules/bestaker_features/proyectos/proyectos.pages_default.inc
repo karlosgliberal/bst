@@ -45,7 +45,7 @@ function proyectos_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'flexible:layout_landing_proyecto';
+  $display->layout = 'bestaker_onecol_stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -57,6 +57,29 @@ function proyectos_default_page_manager_handlers() {
       'secci__n_cinco' => NULL,
       'secci__n_seis' => NULL,
       'secci__n_siete' => NULL,
+      'top' => NULL,
+      'left' => array(),
+      'right' => NULL,
+      'bottom' => NULL,
+      'middle' => array(),
+      'one' => array(
+        'class' => '',
+      ),
+      'two' => NULL,
+      'three' => NULL,
+      'four' => NULL,
+      'five' => NULL,
+      'six' => NULL,
+      'seven' => NULL,
+    ),
+    'left' => array(
+      'style' => 'bootstrap_region',
+    ),
+    'middle' => array(
+      'style' => 'bootstrap_region',
+    ),
+    'one' => array(
+      'style' => 'bestaker_panels_region',
     ),
   );
   $display->cache = array();
@@ -66,7 +89,7 @@ function proyectos_default_page_manager_handlers() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-bfd5f29a-078a-45f9-b29c-dd0fc1480440';
-    $pane->panel = 'silde';
+    $pane->panel = 'one';
     $pane->type = 'entity_view';
     $pane->subtype = 'node';
     $pane->shown = TRUE;
@@ -80,6 +103,7 @@ function proyectos_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'naked',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -87,7 +111,7 @@ function proyectos_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = 'bfd5f29a-078a-45f9-b29c-dd0fc1480440';
     $display->content['new-bfd5f29a-078a-45f9-b29c-dd0fc1480440'] = $pane;
-    $display->panels['silde'][0] = 'new-bfd5f29a-078a-45f9-b29c-dd0fc1480440';
+    $display->panels['one'][0] = 'new-bfd5f29a-078a-45f9-b29c-dd0fc1480440';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

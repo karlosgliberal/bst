@@ -343,14 +343,14 @@ function home_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Descripción */
+  /* Field: Content: Descripción corta */
   $handler->display->display_options['fields']['field_proyecto_descripcion']['id'] = 'field_proyecto_descripcion';
   $handler->display->display_options['fields']['field_proyecto_descripcion']['table'] = 'field_data_field_proyecto_descripcion';
   $handler->display->display_options['fields']['field_proyecto_descripcion']['field'] = 'field_proyecto_descripcion';
   $handler->display->display_options['fields']['field_proyecto_descripcion']['label'] = '';
   $handler->display->display_options['fields']['field_proyecto_descripcion']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_proyecto_descripcion']['element_default_classes'] = FALSE;
-  /* Field: Content: Imagen */
+  /* Field: Content: Imagen Listados */
   $handler->display->display_options['fields']['field_proyecto_imagen']['id'] = 'field_proyecto_imagen';
   $handler->display->display_options['fields']['field_proyecto_imagen']['table'] = 'field_data_field_proyecto_imagen';
   $handler->display->display_options['fields']['field_proyecto_imagen']['field'] = 'field_proyecto_imagen';

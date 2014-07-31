@@ -15,12 +15,12 @@ function configuracion_ckeditor_profile_defaults() {
         'skin' => 'moono',
         'ckeditor_path' => '%l/ckeditor',
         'ckeditor_local_path' => '',
-        'ckeditor_plugins_path' => '%m/plugins',
+        'ckeditor_plugins_path' => '%l/plugins',
         'ckeditor_plugins_local_path' => '',
         'ckfinder_path' => '%m/ckfinder',
         'ckfinder_local_path' => '',
         'ckeditor_aggregate' => 'f',
-        'toolbar_wizard' => 'f',
+        'toolbar_wizard' => 't',
         'loadPlugins' => array(),
       ),
       'input_formats' => array(),
@@ -120,14 +120,12 @@ function configuracion_ckeditor_profile_defaults() {
     [\'Source\'],
     [\'Cut\',\'Copy\',\'Paste\',\'PasteText\',\'PasteFromWord\',\'-\',\'SpellChecker\'],
     [\'Undo\',\'Redo\',\'Find\',\'Replace\',\'-\',\'SelectAll\'],
-    [\'Image\',\'Table\',\'HorizontalRule\',\'SpecialChar\'],
+    [\'Image\',\'MediaEmbed\',\'Table\',\'HorizontalRule\',\'SpecialChar\'],
     \'/\',
     [\'Format\',\'Bold\',\'Italic\',\'Underline\',\'Strike\',\'-\',\'Subscript\',\'Superscript\',\'-\',\'RemoveFormat\'],
     [\'NumberedList\',\'BulletedList\',\'-\',\'Outdent\',\'Indent\',\'Blockquote\'],
-    [\'Link\',\'Unlink\',\'Anchor\', \'Maximize\']
-
-]
-    ',
+    [\'Link\',\'Unlink\',\'Anchor\',\'Maximize\']
+]',
         'expand' => 't',
         'default' => 't',
         'show_toggle' => 't',
@@ -200,6 +198,18 @@ function configuracion_ckeditor_profile_defaults() {
               'Media' => array(
                 'label' => 'Media',
                 'icon' => 'images/icon.gif',
+              ),
+            ),
+            'default' => 'f',
+          ),
+          'mediaembed' => array(
+            'name' => 'mediaembed',
+            'desc' => 'Plugin for inserting Drupal embeded media',
+            'path' => '%plugin_dir%mediaembed/',
+            'buttons' => array(
+              'MediaEmbed' => array(
+                'label' => 'MediaEmbed',
+                'icon' => 'images/icon.png',
               ),
             ),
             'default' => 'f',
