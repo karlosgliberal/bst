@@ -558,3 +558,34 @@ if (file_exists(dirname(__FILE__) . '/local_conf.php')) {
 }
 
 
+/**
+ * Rutas para jquery, teniendo en cuenta el idioma
+ */
+if(function_exists('arg')){
+
+  if (!(arg(0) == "admin" && arg(1) == "config"
+    && arg(2) == "development" && arg(3) == "jquery_update")) {
+    if (arg(0) == 'admin' ||
+      (arg(0) == 'node' && arg(1) == 'add') ||
+      (arg(0) == 'node' && arg(2) == 'edit') ||
+      (arg(0) == 'file' && arg(1) == 'imce')||
+      (arg(0) == 'file' && arg(1) == 'ajax') ||
+      (arg(0) == 'taxonomy' && arg(1) == 'term')||
+      (arg(0) == 'system' && arg(1) == 'ajax' && !arg(2))) {
+      $conf['jquery_update_jquery_version'] = '1.5';
+    }
+  }
+
+  if (!(arg(1) == "admin" && arg(2) == "config"
+    && arg(3) == "development" && arg(4) == "jquery_update")) {
+    if (arg(1) == 'admin' ||
+      (arg(1) == 'node' && arg(2) == 'add') ||
+      (arg(1) == 'node' && arg(3) == 'edit') ||
+      (arg(1) == 'file' && arg(2) == 'imce')||
+      (arg(1) == 'file' && arg(2) == 'ajax') ||
+      (arg(1) == 'taxonomy' && arg(2) == 'term')||
+      (arg(1) == 'system' && arg(2) == 'ajax' && !arg(3))) {
+      $conf['jquery_update_jquery_version'] = '1.5';
+    }
+  }
+}
