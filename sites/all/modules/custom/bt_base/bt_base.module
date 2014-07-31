@@ -8,12 +8,12 @@ module_load_include('inc', 'bt_base', 'bt_base.blocks');
  */
 
 /**
- * Implements hook_init().
+ * Implements hook_ctools_plugin_directory()
  */
-function bt_base_init() {
-  //if (drupal_is_front_page()) {
-  //  drupal_add_css(drupal_get_path('module', 'foo') . '/foo.css');
-  //}
+function bt_base_ctools_plugin_directory($module, $plugin) {
+  if ($module == "panels" && in_array($plugin, array('layouts', 'styles'))) {
+    return "plugins/$plugin";
+  }
 }
 
 function bt_base_theme() {
@@ -24,3 +24,5 @@ function bt_base_theme() {
     ),
   );
 }
+
+

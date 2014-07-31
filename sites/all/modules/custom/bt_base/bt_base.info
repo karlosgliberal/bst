@@ -2,3 +2,5 @@ name = Modulo base para bestaker
 description = Este modulo es el modulo base, dando pequeñas utilidaes al drupal
 package = bestaker
 core = 7.x
+
+dependencies[] = panels

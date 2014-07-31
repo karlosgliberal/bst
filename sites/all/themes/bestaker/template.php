@@ -13,6 +13,24 @@ function bestaker_preprocess_node(&$vars, $hook) {
   $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__'. $vars['view_mode'];
 }
 
+/**
+ * Implements hook_preprocess_block().
+ */
+function bestaker_preprocess_block(&$variables) {
+  if ($variables['block_html_id'] == 'block-bt-base-footer') {
+    $variables['theme_hook_suggestions'][] = 'block__no_wrapper';
+  }
+}
+
+/**
+ * Implements hook_preprocess_region().
+ */
+function bestaker_preprocess_region(&$variables) {
+  if ($variables['region'] == 'footer') {
+    $variables['theme_hook_suggestions'][] = 'region__no_wrapper';
+  }
+}
+
 function phptemplate_menu_item_link($item, $link_item) {
   // Convert anchors in path to proper fragment
   $path = explode('#', $link_item['path'], 2);
