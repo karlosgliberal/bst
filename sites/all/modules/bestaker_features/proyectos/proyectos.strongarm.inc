@@ -252,6 +252,14 @@ function proyectos_strongarm() {
             'weight' => '0',
             'visible' => FALSE,
           ),
+          'full' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),
