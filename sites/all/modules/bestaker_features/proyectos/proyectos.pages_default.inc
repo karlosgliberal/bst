@@ -66,8 +66,12 @@ function proyectos_default_page_manager_handlers() {
         'class' => '',
       ),
       'two' => NULL,
-      'three' => NULL,
-      'four' => NULL,
+      'three' => array(
+        'class' => 'seccion-proyecto-equipo',
+      ),
+      'four' => array(
+        'class' => 'seccion-proyecto-noticias',
+      ),
       'five' => NULL,
       'six' => NULL,
       'seven' => NULL,
@@ -81,12 +85,94 @@ function proyectos_default_page_manager_handlers() {
     'one' => array(
       'style' => 'bestaker_panels_region',
     ),
+    'three' => array(
+      'style' => 'bestaker_panels_region',
+    ),
+    'four' => array(
+      'style' => 'bestaker_panels_region',
+    ),
   );
   $display->cache = array();
   $display->title = '';
   $display->uuid = '6a0c8e26-3793-48d6-93ac-c5f6fcad95e9';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-18bf661a-83d6-4689-8615-dd01fcf73be1';
+    $pane->panel = 'four';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Proyecto - bloque titulo - noticias',
+      'title' => '',
+      'body' => '<div class="container" id="proyecto-noticias">
+<div class="row">
+<div class="col-md-12 center">
+<h2 class="titular-con-bestaker">Qué dicen de <span class="titular-blue">Nosotros</span></h2>
+
+<p class="sub-titulo-bestaker uppercase">Lorem ipsum dolor set, Lorem set Lorem ipsum dolor set, Lorem setLorem ipsum dolor set, Lorem setLorem ipsum dolor set, Lorem setLorem ipsum dolor set, Lorem set Lorem ipsum dolor set, Lorem setLorem ipsum dolor set, Lorem setLorem ipsum dolor set, Lorem set.</p>
+
+<div class="wrapper-line">
+<div class="line line-black">&nbsp;</div>
+
+<div class="line line-blue">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+      'style' => 'naked',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '18bf661a-83d6-4689-8615-dd01fcf73be1';
+    $display->content['new-18bf661a-83d6-4689-8615-dd01fcf73be1'] = $pane;
+    $display->panels['four'][0] = 'new-18bf661a-83d6-4689-8615-dd01fcf73be1';
+    $pane = new stdClass();
+    $pane->pid = 'new-c6fe5927-7d29-4e1e-a438-b36bf3d2adbb';
+    $pane->panel = 'four';
+    $pane->type = 'views';
+    $pane->subtype = 'proyecto_listado_noticias';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 1,
+      'nodes_per_page' => '4',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+      'style' => 'naked',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'c6fe5927-7d29-4e1e-a438-b36bf3d2adbb';
+    $display->content['new-c6fe5927-7d29-4e1e-a438-b36bf3d2adbb'] = $pane;
+    $display->panels['four'][1] = 'new-c6fe5927-7d29-4e1e-a438-b36bf3d2adbb';
     $pane = new stdClass();
     $pane->pid = 'new-bfd5f29a-078a-45f9-b29c-dd0fc1480440';
     $pane->panel = 'one';
@@ -144,6 +230,7 @@ function proyectos_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'naked',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -178,6 +265,7 @@ function proyectos_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'naked',
     );
     $pane->css = array();
     $pane->extras = array();
