@@ -1,0 +1,43 @@
+#ficha-proyecto{
+	.deepbanner{
+		h1{
+			margin-bottom: 20px;
+			font-size: 24px;
+			font-weight: 700;
+			color: #fff;
+			text-transform: uppercase;
+			@media (min-width: @screen-sm-min) {
+				line-height: .95;
+			}
+			@media (min-width: @screen-md-min) {
+				font-size: 40px;
+			}
+			@media (min-width: @screen-lg-min) {
+				font-size: 55px;
+			}
+		}
+		.lead{
+			font-size: 15px;
+			line-height: 22px;
+			color: #fff;
+			text-transform: uppercase;
+		}
+	}
+	.circle{
+		&.bg-white{
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&.bg-blue{
+			position: absolute;
+			top: 100px;
+			left: 0;
+		}
+		&.bg-pink{
+			position: absolute;
+			top: 0;
+			left: 100px;
+		}
+	}
+}

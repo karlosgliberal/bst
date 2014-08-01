@@ -2,27 +2,52 @@
   $wrapper = entity_metadata_wrapper('node', $node);
   $bk_img = $wrapper->field_proyecto_imagen_deep->value();
 ?>
-<article<?php print $attributes; ?> class="ficha-proyecto">
+<article<?php print $attributes; ?> id="ficha-proyecto">
   <div class="deepbanner" style="background-image:url('<?php print(file_create_url($bk_img['uri']))?>')">
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2><?php print $node->title ?></h2>
+          <h1><?php print $node->title ?></h1>
           <div class="lead subtitle">
             <?php print drupal_render($content['field_proyecto_descripcion']); ?>
           </div>
         </div>
         <div class="col-md-8">
-          <div class="embed-container">
-            aqui van los circulicos, tiene que tener:
-            - inversión mínima
-            - rentabilidad prevista (2017)
-            - rentabilidad prevista (2018)
-            - número de inversores
-            - capital captado
-            - 7ª ronda
-            Quedan 12 días para que finalice este tramo
+          
+          <div class="circle xs bg-white">
+            <div class="wrapper">
+              <strong class="number">300€</strong>
+              <strong>Inversión</strong> mínima requerida 
+            </div>
           </div>
+          
+          <div class="circle sm bg-blue">
+            <div class="wrapper">
+              <strong class="number">7.5x</strong>
+              <strong>Rentabilidad</strong> prevista por dividendos <strong>2017</strong>
+            </div>
+          </div>
+
+          <div class="circle md bg-pink">
+            <div class="wrapper">
+              <strong class="number">27x</strong>
+              <strong>Rentabilidad</strong> prevista por dividendos <strong>2018</strong>
+            </div>
+          </div>
+          
+          
+            <strong>7ª</strong> ronda de inversión  
+          
+
+          
+
+          
+            
+          
+
+          número de inversores?????
+          capital captado ????
+          Quedan 12 días para que finalice este tramo
         </div>
       </div>
     </div>

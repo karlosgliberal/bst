@@ -211,8 +211,52 @@ a:active {
 }
 
 
+// Background colors
+
+.bg-white{
+	background-color: #fff;
+}
+
+.bg-blue{
+	color: #fff;
+	background-color: @bg-blue;
+}
+
+.bg-pink{
+	color: #fff;
+	background-color: @bg-pink;
+}
+
+
+// Circles
+
+.circle{
+	display: table;
+	&.xs{
+		width: 115px;
+		height: 115px;
+		border-radius: 115px;
+	}
+	&.sm{
+		width: 145px;
+		height: 145px;	
+		border-radius: 145px;
+	}
+	&.md{
+		width: 160px;
+		height: 160px;
+		border-radius: 160px;
+	}
+	.wrapper{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
+}
+
 // Theme specific
 
 @import 'header.less';
 @import 'footer.less';
 @import 'home.less';
+@import 'project.less';
