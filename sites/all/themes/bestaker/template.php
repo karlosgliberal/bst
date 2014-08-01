@@ -93,3 +93,12 @@ function nov_strap_button($variables) {
     return theme_button($variables);
   }
 }
+
+function bestaker_preprocess_image(&$variables) {
+  $attributes = &$variables['attributes'];
+  unset($attributes['width']);
+  unset($attributes['height']);
+  unset($variables['width']);
+  unset($variables['height']);
+  $attributes['class'][] = 'img-responsive';
+}

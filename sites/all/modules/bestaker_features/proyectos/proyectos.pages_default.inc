@@ -112,6 +112,80 @@ function proyectos_default_page_manager_handlers() {
     $pane->uuid = 'bfd5f29a-078a-45f9-b29c-dd0fc1480440';
     $display->content['new-bfd5f29a-078a-45f9-b29c-dd0fc1480440'] = $pane;
     $display->panels['one'][0] = 'new-bfd5f29a-078a-45f9-b29c-dd0fc1480440';
+    $pane = new stdClass();
+    $pane->pid = 'new-baa8b9f2-7aa3-4a8c-86fb-0534fc27e06a';
+    $pane->panel = 'three';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<div class="container" id="proyecto-equipo">
+<div class="row">
+<div class="col-md-12 center">
+<h2 class="titular-con-bestaker">Nuestro equipo <span class="titular-blue">Davalor</span></h2>
+
+<p class="sub-titulo-bestaker uppercase">Lorem ipsum dolor set, Lorem set</p>
+
+<div class="wrapper-line">
+<div class="line line-black">&nbsp;</div>
+
+<div class="line line-blue">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'baa8b9f2-7aa3-4a8c-86fb-0534fc27e06a';
+    $display->content['new-baa8b9f2-7aa3-4a8c-86fb-0534fc27e06a'] = $pane;
+    $display->panels['three'][0] = 'new-baa8b9f2-7aa3-4a8c-86fb-0534fc27e06a';
+    $pane = new stdClass();
+    $pane->pid = 'new-c8c26517-ae0e-4ba1-8c0c-da2dd6e22917';
+    $pane->panel = 'three';
+    $pane->type = 'views';
+    $pane->subtype = 'proyecto_listado_equipo';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'c8c26517-ae0e-4ba1-8c0c-da2dd6e22917';
+    $display->content['new-c8c26517-ae0e-4ba1-8c0c-da2dd6e22917'] = $pane;
+    $display->panels['three'][1] = 'new-c8c26517-ae0e-4ba1-8c0c-da2dd6e22917';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
