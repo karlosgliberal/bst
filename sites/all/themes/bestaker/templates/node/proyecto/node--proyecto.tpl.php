@@ -6,48 +6,37 @@
   <div class="deepbanner" style="background-image:url('<?php print(file_create_url($bk_img['uri']))?>')">
     <div class="container">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-sm-5 col-md-4 col-lg-5">
           <h1><?php print $node->title ?></h1>
           <div class="lead subtitle">
             <?php print drupal_render($content['field_proyecto_descripcion']); ?>
           </div>
         </div>
-        <div class="col-md-8">
-          
-          <div class="circle xs bg-white">
+        <div class="col-sm-7 col-md-8 col-lg-7">
+          <div id="inversion-minima" class="circle xs">
             <div class="wrapper">
               <strong class="number">300€</strong>
-              <strong>Inversión</strong> mínima requerida 
+              <p><strong>Inversión</strong> mínima requerida</p>
             </div>
           </div>
-          
-          <div class="circle sm bg-blue">
-            <div class="wrapper">
-              <strong class="number">7.5x</strong>
-              <strong>Rentabilidad</strong> prevista por dividendos <strong>2017</strong>
-            </div>
-          </div>
-
-          <div class="circle md bg-pink">
+          <div id="rentabilidad-prevista-2018" class="circle md">
             <div class="wrapper">
               <strong class="number">27x</strong>
-              <strong>Rentabilidad</strong> prevista por dividendos <strong>2018</strong>
+              <p><strong>Rentabilidad</strong> prevista por dividendos <strong>2018</strong></p>
             </div>
           </div>
-          
-          
-            <strong>7ª</strong> ronda de inversión  
-          
-
-          
-
-          
-            
-          
-
-          número de inversores?????
+          <div id="rentabilidad-prevista-2017" class="circle sm">
+            <div class="wrapper">
+              <strong class="number">7.5x</strong>
+              <p><strong>Rentabilidad</strong> prevista por dividendos <strong>2017</strong></p>
+            </div>
+          </div>
+          <div id="ronda-inversion">
+            <p><strong>7ª</strong> ronda de inversión</p>
+          </div>
+          <!--número de inversores?????
           capital captado ????
-          Quedan 12 días para que finalice este tramo
+          Quedan 12 días para que finalice este tramo-->
         </div>
       </div>
     </div>

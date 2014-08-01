@@ -1,0 +1,14 @@
+//
+// Mixins
+// --------------------------------------------------
+
+
+// Utilities
+// -------------------------
+
+// WebKit-style focus
+.rgba(@color: @white, @alpha: 1) {
+  background: hsla(hue(@color), 
+              saturation(@color), 
+              lightness(@color), @alpha);
+}

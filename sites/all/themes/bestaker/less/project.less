@@ -1,5 +1,21 @@
 #ficha-proyecto{
 	.deepbanner{
+		@media (min-width: @screen-sm-min) {
+			min-height: 360px;
+			position: relative;
+		}
+		&:before{
+			@media (min-width: @screen-sm-min) {
+				content: "";
+				width: 50%;
+				height: 360px;
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: url('../images/bk.transparencia-negro.png') top right no-repeat;
+			}
+		}
 		h1{
 			margin-bottom: 20px;
 			font-size: 24px;
@@ -7,13 +23,12 @@
 			color: #fff;
 			text-transform: uppercase;
 			@media (min-width: @screen-sm-min) {
+				margin-top: 55px;
+				font-size: 55px;
 				line-height: .95;
 			}
-			@media (min-width: @screen-md-min) {
-				font-size: 40px;
-			}
 			@media (min-width: @screen-lg-min) {
-				font-size: 55px;
+				font-size: 66px;
 			}
 		}
 		.lead{
@@ -21,23 +36,97 @@
 			line-height: 22px;
 			color: #fff;
 			text-transform: uppercase;
+			@media (min-width: @screen-lg-min) {
+				font-size: 18px;
+				line-height: 25px;
+			}
 		}
 	}
-	.circle{
-		&.bg-white{
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-		&.bg-blue{
-			position: absolute;
-			top: 100px;
-			left: 0;
-		}
-		&.bg-pink{
-			position: absolute;
-			top: 0;
-			left: 100px;
+}
+
+#inversion-minima{
+	@media (min-width: @screen-sm-min) {
+		position: absolute;
+		top: 60px;
+		left: 40px;
+		.rgba(@color: #fff, @alpha: .9);
+		z-index: 3;
+	}
+	@media (min-width: @screen-md-min) {
+		left: 80px;
+	}
+	.number{
+		@media (max-width: @screen-xs-max) {
+			.rgba(@color: #fff, @alpha: .9);
 		}
 	}
+}
+
+#rentabilidad-prevista-2018{
+	color: #fff;
+	@media (min-width: @screen-sm-min) {
+		position: absolute;
+		top: 90px;
+		left: 150px;
+		.rgba(@color: @pink, @alpha: .9);
+		z-index: 2;
+	}
+	@media (min-width: @screen-md-min) {
+		left: 190px;
+	}
+	.number{
+		@media (max-width: @screen-xs-max) {
+			.rgba(@color: @pink, @alpha: .9);
+		}
+	}
+}
+
+#rentabilidad-prevista-2017{
+	color: #fff;
+	@media (min-width: @screen-sm-min) {
+		position: absolute;
+		top: 160px;
+		left: 0;
+		.rgba(@color: @medium-blue, @alpha: .9);
+		z-index: 1;
+	}
+	@media (min-width: @screen-md-min) {
+		left: 40px;
+	}
+	.number{
+		@media (max-width: @screen-xs-max) {
+			.rgba(@color: @medium-blue, @alpha: .9);
+		}
+	}
+}
+
+#ronda-inversion{
+	clear: both;
+	margin-top: 30px;
+	padding: 5px 10px 15px;
+	font-size: 14px;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #fff;
+	text-align: center;
+	@media (max-width: @screen-xs-max) {
+		.border-top-radius(3px);	
+	}
+	@media (min-width: @screen-sm-min) {
+		width: 245px;
+		margin-top: 0;
+		position: absolute;
+		top: 0;
+		right: 15px;
+		.border-bottom-radius(3px);
+		font-size: 16px;
+	}
+	strong{
+		display: block;
+		font-size: 27px;
+		@media (min-width: @screen-sm-min) {
+			font-size: 40px;
+		}
+	}
+	background-color: @medium-blue;
 }

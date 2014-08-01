@@ -17,6 +17,9 @@
 
 @import 'icons.less';
 
+// Own mixins
+@import 'mixins.less';
+
 
 // Basics
 
@@ -211,46 +214,86 @@ a:active {
 }
 
 
-// Background colors
-
-.bg-white{
-	background-color: #fff;
-}
-
-.bg-blue{
-	color: #fff;
-	background-color: @bg-blue;
-}
-
-.bg-pink{
-	color: #fff;
-	background-color: @bg-pink;
-}
-
-
 // Circles
 
 .circle{
-	display: table;
+	@media (min-width: @screen-sm-min) {
+		display: table;	
+	}
+	@media (max-width: @screen-xs-max) {
+		margin-bottom: 15px;
+	}
 	&.xs{
-		width: 115px;
-		height: 115px;
-		border-radius: 115px;
+		@media (min-width: @screen-sm-min) {
+			width: 115px;
+			height: 115px;
+			border-radius: 115px;	
+		}
+		.number{
+			@media (min-width: @screen-sm-min) {
+				font-size: 26px;	
+			}
+		}
 	}
 	&.sm{
-		width: 145px;
-		height: 145px;	
-		border-radius: 145px;
+		@media (min-width: @screen-sm-min) {
+			width: 145px;
+			height: 145px;	
+			border-radius: 145px;	
+		}
+		.number{
+			@media (min-width: @screen-sm-min) {
+				font-size: 40px;	
+			}
+		}
 	}
 	&.md{
-		width: 160px;
-		height: 160px;
-		border-radius: 160px;
+		@media (min-width: @screen-sm-min) {
+			width: 160px;
+			height: 160px;
+			border-radius: 160px;	
+		}
+		.number{
+			@media (min-width: @screen-sm-min) {
+				font-size: 55px;	
+			}
+		}
 	}
 	.wrapper{
-		display: table-cell;
-		vertical-align: middle;
-		text-align: center;
+		font-size: 12px;
+		line-height: 1.4;
+		@media (min-width: @screen-sm-min) {
+			padding: 0 10px 10px;
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;	
+		}
+		@media (max-width: @screen-xs-max) {
+			.clearfix;
+			display: table;
+		}
+		p{
+			@media (max-width: @screen-xs-max) {
+				display: table-cell;
+				vertical-align: middle;
+				padding-left: 15px;
+				font-size: 15px;
+				color: #fff;
+			}
+		}
+	}
+	.number{
+		display: block;
+		@media (max-width: @screen-xs-max) {
+			width: 90px;
+			height: 90px;
+			border-radius: 90px;
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 27px;
+			background-color: #fff;
+			text-align: center;
+		}
 	}
 }
 
