@@ -43,3 +43,6 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+##GRUNT y NPM
+node_modules
