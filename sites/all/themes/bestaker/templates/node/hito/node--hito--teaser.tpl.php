@@ -1,6 +1,8 @@
-<a href="<?php print drupal_render($content['field_noticia_url']); ?>">
-  <h3><?php print $node->title; ?></h3>
-  <p class="medio"><?php print drupal_render($content['field_noticia_medio']); ?></p>
-  <p class="fecha"><?php print drupal_render($content['field_noticia_fecha']); ?></p>
-  <?php print drupal_render($content['field_noticia_entradilla']); ?>
-</a>
+<div class="timeline-heading">
+  <p class="fecha"><?php print drupal_render($content['field_hito_fecha']); ?></p>
+  <h3 class="timeline-title"><a href="/node/<?php echo $node->nid;?>/edit"><?php print $node->title; ?></a></h3>
+</div>
+<div class="timeline-body">
+  <?php print drupal_render($content['field_hito_entradilla']); ?>
+  <?php print drupal_render($content['field_hito_imagen']); ?>
+</div>

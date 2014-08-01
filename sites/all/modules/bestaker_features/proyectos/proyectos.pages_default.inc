@@ -49,7 +49,7 @@ function proyectos_default_page_manager_handlers() {
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
+      'default' => array(),
       'silde' => NULL,
       'seccion_dos' => NULL,
       'seccion_trs' => NULL,
@@ -63,18 +63,20 @@ function proyectos_default_page_manager_handlers() {
       'bottom' => NULL,
       'middle' => array(),
       'one' => array(
-        'class' => '',
+        'class' => 'proyecto-seccion-deepbanner',
       ),
-      'two' => NULL,
+      'two' => array(
+        'class' => 'proyecto-seccion-hitos',
+      ),
       'three' => array(
-        'class' => 'seccion-proyecto-equipo',
+        'class' => 'proyecto-seccion-noticias',
       ),
       'four' => array(
-        'class' => 'seccion-proyecto-noticias',
+        'class' => 'proyecto-seccion-equipo',
       ),
-      'five' => NULL,
-      'six' => NULL,
-      'seven' => NULL,
+      'five' => array(),
+      'six' => array(),
+      'seven' => array(),
     ),
     'left' => array(
       'style' => 'bootstrap_region',
@@ -89,6 +91,19 @@ function proyectos_default_page_manager_handlers() {
       'style' => 'bestaker_panels_region',
     ),
     'four' => array(
+      'style' => 'bestaker_panels_region',
+    ),
+    'style' => 'bestaker_panels_region',
+    'two' => array(
+      'style' => 'bestaker_panels_region',
+    ),
+    'five' => array(
+      'style' => 'bestaker_panels_region',
+    ),
+    'six' => array(
+      'style' => 'bestaker_panels_region',
+    ),
+    'seven' => array(
       'style' => 'bestaker_panels_region',
     ),
   );
@@ -128,8 +143,8 @@ function proyectos_default_page_manager_handlers() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
-      'style' => 'naked',
+      'settings' => array(),
+      'style' => 'bestaker_panels_region',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -163,8 +178,8 @@ function proyectos_default_page_manager_handlers() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
-      'style' => 'naked',
+      'settings' => array(),
+      'style' => 'bestaker_panels_region',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -188,8 +203,8 @@ function proyectos_default_page_manager_handlers() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
-      'style' => 'naked',
+      'settings' => array(),
+      'style' => 'bestaker_panels_region',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -229,8 +244,8 @@ function proyectos_default_page_manager_handlers() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
-      'style' => 'naked',
+      'settings' => array(),
+      'style' => 'bestaker_panels_region',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -264,8 +279,8 @@ function proyectos_default_page_manager_handlers() {
     );
     $pane->cache = array();
     $pane->style = array(
-      'settings' => NULL,
-      'style' => 'naked',
+      'settings' => array(),
+      'style' => 'bestaker_panels_region',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -274,6 +289,85 @@ function proyectos_default_page_manager_handlers() {
     $pane->uuid = 'c8c26517-ae0e-4ba1-8c0c-da2dd6e22917';
     $display->content['new-c8c26517-ae0e-4ba1-8c0c-da2dd6e22917'] = $pane;
     $display->panels['three'][1] = 'new-c8c26517-ae0e-4ba1-8c0c-da2dd6e22917';
+    $pane = new stdClass();
+    $pane->pid = 'new-6a87c4bd-4e86-42c0-be84-8d4b9a1a8506';
+    $pane->panel = 'two';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => '',
+      'title' => '',
+      'body' => '<div class="container" id="proyecto-hitos">
+<div class="row">
+<div class="col-md-12 center">
+<h2 class="titular-con-bestaker"><span class="titular-blue">Hitos</span> del proyecto</h2>
+
+<p class="sub-titulo-bestaker uppercase">Lorem ipsum dolor set, Lorem set Lorem ipsum dolor set, Lorem setLorem ipsum dolor set, Lorem set</p>
+
+<div class="wrapper-line">
+<div class="line line-black">&nbsp;</div>
+
+<div class="line line-blue">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+',
+      'format' => 'full_html',
+      'substitute' => 1,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'style' => 'bestaker_panels_region',
+      'settings' => array(),
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '6a87c4bd-4e86-42c0-be84-8d4b9a1a8506';
+    $display->content['new-6a87c4bd-4e86-42c0-be84-8d4b9a1a8506'] = $pane;
+    $display->panels['two'][0] = 'new-6a87c4bd-4e86-42c0-be84-8d4b9a1a8506';
+    $pane = new stdClass();
+    $pane->pid = 'new-1855a42a-1a3c-4129-9d09-b17f316e2a87';
+    $pane->panel = 'two';
+    $pane->type = 'views';
+    $pane->subtype = 'proyecto_timeline';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '5',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '',
+      'url' => '',
+      'display' => 'default',
+      'context' => array(
+        0 => '',
+      ),
+      'override_title' => 1,
+      'override_title_text' => '<none>',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => array(),
+      'style' => 'bestaker_panels_region',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '1855a42a-1a3c-4129-9d09-b17f316e2a87';
+    $display->content['new-1855a42a-1a3c-4129-9d09-b17f316e2a87'] = $pane;
+    $display->panels['two'][1] = 'new-1855a42a-1a3c-4129-9d09-b17f316e2a87';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
