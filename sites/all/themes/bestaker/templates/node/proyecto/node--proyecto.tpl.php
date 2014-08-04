@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-5 col-md-4 col-lg-5">
-          <h1><?php print $node->title ?></h1>
+          <h1 class="h1"><?php print $node->title ?></h1>
           <div class="lead subtitle">
             <?php print drupal_render($content['field_proyecto_descripcion']); ?>
           </div>
@@ -31,27 +31,48 @@
               <p><strong>Rentabilidad</strong> prevista por dividendos <strong>2017</strong></p>
             </div>
           </div>
-          <div id="ronda-inversion">
-            <p><strong>7ª</strong> ronda de inversión</p>
+          <div id="numero-inversores" class="circle sm">
+            <div class="wrapper">
+              <strong class="number">55</strong>
+              <p><strong>Inversores</strong> han participado</p>
+            </div>
           </div>
-          <!--número de inversores?????
-          capital captado ????
-          Quedan 12 días para que finalice este tramo-->
+          <div id="capital-captado" class="circle lg">
+            <div class="wrapper">
+              <strong class="number">120.000€</strong>
+              <p>de <strong>capital captado</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="ronda-inversion">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4 col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-2">
+            <h2 class="h2"><strong>7ª</strong> ronda de inversión</h2>    
+          </div>
+          <div class="col-sm-8 col-md-6 col-lg-5">
+            <p>Quedan <strong>12 días</strong> para que finalice este tramo <span class="glyphicon glyphicon-info-sign"></span></p>    
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-  <nav role="navigation" class="container">
-    <ul class="menu nav navbar-nav">
-      <li class="first leaf"><a href="#proyecto-descripcion"><?php echo t('Descripción del proyecto');?></a></li>
-      <li class="leaf"><a href="#proyecto-hitos"><?php echo t('Hitos');?></a></li>
-      <li class="leaf"><a href="#proyecto-equipo"><?php echo t('Equipo');?></a></li>
-      <li class="leaf"><a href="#proyecto-noticias"><?php echo t('Noticias');?></a></li>
-      <li class="leaf"><a href="#proyecto-dudas"><?php echo t('Dudas');?></a></li>
-      <li class="leaf"><a href="#proyecto-sociedades"><?php echo t('Sociedades');?></a></li>
-    </ul>
-  </nav>
+  <div class="container">
+    <nav id="project-menu" role="navigation" class="navbar navbar-default">
+      <ul class="nav navbar-nav hidden-xs">
+        <li class="first leaf"><a href="#proyecto-descripcion"><?php echo t('Descripción del proyecto');?></a></li>
+        <li class="leaf"><a href="#proyecto-hitos"><?php echo t('Hitos');?></a></li>
+        <li class="leaf"><a href="#proyecto-equipo"><?php echo t('Equipo');?></a></li>
+        <li class="leaf"><a href="#proyecto-noticias"><?php echo t('Noticias');?></a></li>
+        <li class="leaf"><a href="#proyecto-dudas"><?php echo t('Dudas');?></a></li>
+        <li class="leaf"><a href="#proyecto-sociedades"><?php echo t('Sociedades');?></a></li>
+      </ul>
+      <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Seguir el proyecto</button>
+      <button type="button" class="btn btn-default navbar-btn">Invertir en el proyecto</button>
+    </nav>
+  </div>
 
   <div class="para-inversor" id="proyecto-descripcion">
     <div class="container">
