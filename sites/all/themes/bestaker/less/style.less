@@ -18,6 +18,10 @@
 @import 'icons.less';
 
 
+// Responsive embed (from Bootstrap 3.2)
+@import 'responsive-embed.less';
+
+
 // Own mixins
 @import 'mixins.less';
 
@@ -72,7 +76,6 @@ a:active {
 	margin-right: 5px;
 	padding: 11px 20px 13px 20px;
 	font-weight: 700;
-	font-size: 14px;
 	text-shadow: none;
 	border: none;
 	text-transform: uppercase;
@@ -222,7 +225,12 @@ a:active {
 		display: table;	
 	}
 	@media (max-width: @screen-xs-max) {
-		margin-bottom: 15px;
+		margin-bottom: -10px;
+	}
+	&:last-child{
+		@media (max-width: @screen-xs-max) {
+			margin-bottom: 15px;
+		}
 	}
 	&.xs{
 		@media (min-width: @screen-sm-min) {
