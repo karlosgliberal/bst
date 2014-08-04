@@ -23,7 +23,7 @@ function theme_panels_bt_base_style_region_render($vars) {
   $settings = $vars['settings'];
 
   if ($panes) {
-    if ($settings['class']) {
+    if (isset($settings['class'])) {
       $class[] = $settings['class'];
     }
 

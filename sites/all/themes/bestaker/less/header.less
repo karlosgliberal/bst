@@ -1,1 +1,60 @@
-// Insert your styling here.
+// Nav bar
+
+.navbar {
+	margin-bottom: 0;
+	min-height: 87px;
+	font-family: @font-family-base;
+	font-weight: 600;
+}
+
+.navbar-default {
+	border-color: @white;
+}
+
+.navbar-nav > li > a {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-transform: uppercase;
+	position: relative;
+	top: 1px;
+	@media(max-width: @screen-xs-max) { 
+		padding-top: 15px;
+		padding-bottom: 15px;
+		font-size: 13px;
+	}
+	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		font-size: 12px;
+	}
+}
+
+.menu-derecha {
+	float: right;
+	@media(max-width: @screen-xs-max) { float:none; }
+}
+
+.logo img {
+	max-width: 100%;
+	@media(max-width: @screen-xs-max) {
+		max-width: 80%;
+		padding-top: 10px;
+	}
+	@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+		max-width: 80%;
+		padding-top:10px;
+	}
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	color: #333333;
+	background-color: transparent;
+	border-bottom: 5px solid @blue;
+}
+
+.navbar-default {
+	background-color: @white;
+}
+
+.navbar.container {
+	margin-top: 0px; 
+}

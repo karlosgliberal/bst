@@ -312,6 +312,10 @@ function proyectos_strongarm() {
             'weight' => '4',
             'visible' => FALSE,
           ),
+          'teaser' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
         ),
       ),
     ),
@@ -361,6 +365,10 @@ function proyectos_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
+            'weight' => '4',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
             'weight' => '4',
             'visible' => FALSE,
           ),
