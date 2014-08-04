@@ -48,14 +48,7 @@
     </div>
     <div id="ronda-inversion">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-4 col-md-4 col-md-offset-1 col-lg-3 col-lg-offset-2">
-            <h2 class="h2"><strong>7ª</strong> ronda de inversión</h2>    
-          </div>
-          <div class="col-sm-8 col-md-6 col-lg-5">
-            <p>Quedan <strong>12 días</strong> para que finalice este tramo <span class="glyphicon glyphicon-info-sign"></span></p>    
-          </div>
-        </div>
+        <p><span class="h2"><strong>7ª</strong> ronda de inversión</span> Quedan <strong>12 días</strong> para que finalice este tramo <span class="glyphicon glyphicon-info-sign"></span></p>
       </div>
     </div>
   </div>
@@ -73,18 +66,43 @@
         <?php print drupal_render($content['flag_seguir_proyecto']); ?>
       </button>
       <button type="button" class="btn btn-default navbar-btn">Invertir en el proyecto</button>
-    </nav>
+    </nav>   
+    <div class="row">
+      <div class="col-lg-5 col-lg-push-7">
+        <div id="follow-invest">
+          <div class="row">
+            <div class="col-sm-6 col-md-4 col-md-offset-2 col-lg-6 col-lg-offset-0">
+              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Seguir el proyecto</button>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-6">
+              <button type="button" class="btn btn-primary">Invertir en el proyecto</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 col-lg-pull-5 hidden-xs">
+        <nav id="project-menu" role="navigation" class="navbar navbar-default">
+          <ul class="nav navbar-nav">
+            <li class="first leaf active"><a href="#proyecto-descripcion"><?php echo t('Descripción del proyecto');?></a></li>
+            <li class="leaf"><a href="#proyecto-hitos"><?php echo t('Hitos');?></a></li>
+            <li class="leaf"><a href="#proyecto-equipo"><?php echo t('Equipo');?></a></li>
+            <li class="leaf"><a href="#proyecto-noticias"><?php echo t('Noticias');?></a></li>
+            <li class="leaf"><a href="#proyecto-dudas"><?php echo t('Dudas');?></a></li>
+            <li class="leaf"><a href="#proyecto-sociedades"><?php echo t('Sociedades');?></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>    
   </div>
 
   <div class="para-inversor" id="proyecto-descripcion">
     <div class="container">
+
       <?php print drupal_render($content['field_proyecto_descripcion_larga']); ?>
 
-      <div class="pull-right">
-        <a class="btn btn-blue btn-large" href="<?php print drupal_render($content['field_proyecto_pdf']); ?>">
+      <a class="btn btn-sm btn-default pull-right" href="<?php print drupal_render($content['field_proyecto_pdf']); ?>">
           <span class="glyphicon glyphicon-download-alt"></span>  <?php echo t('Download Project Datasheet'); ?>
         </a>
-      </div>
     </div>
   </div>
 </article>
