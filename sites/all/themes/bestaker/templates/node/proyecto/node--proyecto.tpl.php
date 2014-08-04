@@ -69,7 +69,9 @@
         <li class="leaf"><a href="#proyecto-dudas"><?php echo t('Dudas');?></a></li>
         <li class="leaf"><a href="#proyecto-sociedades"><?php echo t('Sociedades');?></a></li>
       </ul>
-      <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> Seguir el proyecto</button>
+      <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> 
+        <?php print drupal_render($content['flag_seguir_proyecto']); ?>
+      </button>
       <button type="button" class="btn btn-default navbar-btn">Invertir en el proyecto</button>
     </nav>
   </div>
