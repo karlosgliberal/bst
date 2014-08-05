@@ -52,27 +52,14 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <nav id="project-menu" role="navigation" class="navbar navbar-default">
-      <ul class="nav navbar-nav hidden-xs">
-        <li class="first leaf"><a href="#proyecto-descripcion"><?php echo t('Descripción del proyecto');?></a></li>
-        <li class="leaf"><a href="#proyecto-hitos"><?php echo t('Hitos');?></a></li>
-        <li class="leaf"><a href="#proyecto-equipo"><?php echo t('Equipo');?></a></li>
-        <li class="leaf"><a href="#proyecto-noticias"><?php echo t('Noticias');?></a></li>
-        <li class="leaf"><a href="#proyecto-dudas"><?php echo t('Dudas');?></a></li>
-        <li class="leaf"><a href="#proyecto-sociedades"><?php echo t('Sociedades');?></a></li>
-      </ul>
-      <button type="button" class="btn btn-default navbar-btn"><span class="glyphicon glyphicon-plus-sign"></span> 
-        <?php print drupal_render($content['flag_seguir_proyecto']); ?>
-      </button>
-      <button type="button" class="btn btn-default navbar-btn">Invertir en el proyecto</button>
-    </nav>   
+  <div class="container">   
     <div class="row">
       <div class="col-lg-5 col-lg-push-7">
         <div id="follow-invest">
           <div class="row">
             <div class="col-sm-6 col-md-4 col-md-offset-2 col-lg-6 col-lg-offset-0">
-              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span> Seguir el proyecto</button>
+              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus-sign"></span>
+                <?php print drupal_render($content['flag_seguir_proyecto']); ?></button>
             </div>
             <div class="col-sm-6 col-md-4 col-lg-6">
               <button type="button" class="btn btn-primary">Invertir en el proyecto</button>
