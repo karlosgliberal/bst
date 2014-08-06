@@ -13,6 +13,8 @@
           <div id="sociedad-datos-completos" class="collapse">
             <?php print drupal_render($content['field_sociedad_datos_full']); ?>
           </div>
+          <?php print drupal_render($content['field_sociedad_capital']); ?>
+          <?php print drupal_render($content['field_sociedad_socios']); ?>
         </div>
         <div class="col-md-4">
          <div id="sociedad-menu" >
