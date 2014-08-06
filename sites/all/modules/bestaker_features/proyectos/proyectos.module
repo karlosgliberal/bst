@@ -63,5 +63,5 @@ function proyectos_suscribir_lista($id_lista, $account, $valor_grupo, $entity_id
       )
     )
   );
- $ret = mailchimp_subscribe($id_lista, $user->mail, $merge_preparado, FALSE, FALSE, 'html', false, TRUE);
+  $ret = mailchimp_subscribe($id_lista, $user->mail, $merge_preparado, FALSE, FALSE, 'html', false, TRUE);
 }
