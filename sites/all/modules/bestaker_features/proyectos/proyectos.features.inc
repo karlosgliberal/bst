@@ -27,6 +27,50 @@ function proyectos_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_flag_default_flags().
+ */
+function proyectos_flag_default_flags() {
+  $flags = array();
+  // Exported flag: "Seguir proyecto".
+  $flags['seguir_proyecto'] = array(
+    'entity_type' => 'node',
+    'title' => 'Seguir proyecto',
+    'global' => 0,
+    'types' => array(
+      0 => 'proyecto',
+    ),
+    'flag_short' => 'Seguir proyecto',
+    'flag_long' => '',
+    'flag_message' => '',
+    'unflag_short' => 'Dejar de seguir',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 'full',
+      'teaser' => 0,
+      'rss' => 0,
+      'diff_standard' => 0,
+      'token' => 0,
+    ),
+    'show_as_field' => 1,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'i18n' => 0,
+    'api_version' => 3,
+    'module' => 'proyectos',
+    'locked' => array(
+      0 => 'name',
+    ),
+  );
+  return $flags;
+
+}
+
+/**
  * Implements hook_node_info().
  */
 function proyectos_node_info() {
