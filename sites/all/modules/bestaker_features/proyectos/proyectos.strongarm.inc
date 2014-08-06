@@ -209,6 +209,19 @@ function proyectos_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_flagging__seguir_proyecto';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_flagging__seguir_proyecto'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__equipo';
   $strongarm->value = array(
     'view_modes' => array(
@@ -482,6 +495,27 @@ function proyectos_strongarm() {
   $strongarm->name = 'language_content_type_proyecto';
   $strongarm->value = '4';
   $export['language_content_type_proyecto'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mailchimp_api_key';
+  $strongarm->value = '26b6d84627d49d44c1a393b4625f40a0-us8';
+  $export['mailchimp_api_key'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mailchimp_batch_limit';
+  $strongarm->value = '1000';
+  $export['mailchimp_batch_limit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'mailchimp_cron';
+  $strongarm->value = 0;
+  $export['mailchimp_cron'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

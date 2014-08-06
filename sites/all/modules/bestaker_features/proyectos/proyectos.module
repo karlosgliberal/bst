@@ -5,3 +5,63 @@
  */
 
 include_once 'proyectos.features.inc';
+
+/**
+ * Implements Hook_flag().
+ */
+function proyectos_flag_flag($flag, $entity_id, $account, $flagging){
+  if($flagging->flag_name == 'seguir_proyecto'){
+    $nodo = node_load($entity_id);
+    $entidad = entity_metadata_wrapper('node', $nodo);
+    $id_mailchimp = $entidad->field_proyecto_id_mailchimp->value();
+    $valor_grupo = $entidad->field_proyecto_grupo_mailchimp->value();
+    $subscribed = mailchimp_is_subscribed($id_mailchimp, $account->mail);
+    if(!$subscribed){
+      proyectos_suscribir_lista($id_mailchimp, $account, $valor_grupo, $entity_id);
+    }
+  }
+}
+
+
+/**
+ * Implements Hook_unflag().
+ */
+function proyectos_flag_unflag($flag, $entity_id, $account, $flagging){
+  if($flagging->flag_name == 'seguir_proyecto'){
+    $nodo = node_load($entity_id);
+    $entidad = entity_metadata_wrapper('node', $nodo);
+    $id_mailchimp = $entidad->field_proyecto_id_mailchimp->value();
+    $ret = mailchimp_unsubscribe($id_mailchimp, $account->mail, TRUE);
+  }
+}
+
+/**
+ * Función axuliar para la suscripción con creando el objeto de la lista de interes.
+ */
+function proyectos_suscribir_lista($id_lista, $account, $valor_grupo, $entity_id){
+  $user = user_load($account->uid);
+  $mc_list = mailchimp_get_list($id_lista);
+
+  $intgroups = $mc_list['intgroups'][0]['groups'];
+  $id_grupo  = $mc_list['intgroups'][0]['id'];
+
+  foreach ($intgroups as $key => $value) {
+    if($value['name'] == $valor_grupo){
+      $id_valor_grupo = $value['id'];
+    }
+  }
+
+  $merge_preparado = array(
+    'EMAIL' => $user->mail,
+    'FNAME' => $user->name,
+    'GROUPINGS' => array(
+      array(
+        'id' => $id_grupo,
+        'groups' => array(
+          $valor_grupo => $valor_grupo
+        )
+      )
+    )
+  );
+  $ret = mailchimp_subscribe($id_lista, $user->mail, $merge_preparado, FALSE, FALSE, 'html', false, TRUE);
+}

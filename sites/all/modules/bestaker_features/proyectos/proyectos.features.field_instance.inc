@@ -990,6 +990,94 @@ function proyectos_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-proyecto-field_proyecto_grupo_mailchimp'
+  $field_instances['node-proyecto-field_proyecto_grupo_mailchimp'] = array(
+    'bundle' => 'proyecto',
+    'default_value' => array(
+      0 => array(
+        'value' => 'No inversor',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_proyecto_grupo_mailchimp',
+    'label' => 'Valor grupo Mailchimp',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 20,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-proyecto-field_proyecto_id_mailchimp'
+  $field_instances['node-proyecto-field_proyecto_id_mailchimp'] = array(
+    'bundle' => 'proyecto',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Id de la lista de correo generada en Mailchimp que se accede desde el menu "settings" de la lista en concreto',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'div',
+    'field_name' => 'field_proyecto_id_mailchimp',
+    'label' => 'Id Mailchimp',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 10,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-proyecto-field_proyecto_imagen'
   $field_instances['node-proyecto-field_proyecto_imagen'] = array(
     'bundle' => 'proyecto',
@@ -1253,6 +1341,8 @@ function proyectos_field_default_field_instances() {
   t('Fichero explicativo del proyecto en formato PDF');
   t('Foto');
   t('Group');
+  t('Id Mailchimp');
+  t('Id de la lista de correo generada en Mailchimp que se accede desde el menu "settings" de la lista en concreto');
   t('Imagen');
   t('Imagen Listados');
   t('Imagen asociada al proyecto a utilizar en listados y homes. Lo óptimo es que sea una imagen con proporciones 4x3');
@@ -1269,6 +1359,7 @@ function proyectos_field_default_field_instances() {
   t('URL');
   t('URL de cuenta de twitter. Incluir http://');
   t('URL de la cuenta de Linked-in. Incluir http://');
+  t('Valor grupo Mailchimp');
 
   return $field_instances;
 }
