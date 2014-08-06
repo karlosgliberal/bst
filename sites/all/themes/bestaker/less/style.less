@@ -25,6 +25,9 @@
 // Own mixins
 @import 'mixins.less';
 
+//Yamm megamenu
+@import 'yamm.less';
+
 
 // Basics
 
@@ -222,7 +225,7 @@ a:active {
 
 .circle{
 	@media (min-width: @screen-sm-min) {
-		display: table;	
+		display: table;
 	}
 	@media (max-width: @screen-xs-max) {
 		margin-bottom: -10px;
@@ -236,23 +239,23 @@ a:active {
 		@media (min-width: @screen-sm-min) {
 			width: 115px;
 			height: 115px;
-			border-radius: 115px;	
+			border-radius: 115px;
 		}
 		.number{
 			@media (min-width: @screen-sm-min) {
-				font-size: 26px;	
+				font-size: 26px;
 			}
 		}
 	}
 	&.sm{
 		@media (min-width: @screen-sm-min) {
 			width: 145px;
-			height: 145px;	
-			border-radius: 145px;	
+			height: 145px;
+			border-radius: 145px;
 		}
 		.number{
 			@media (min-width: @screen-sm-min) {
-				font-size: 40px;	
+				font-size: 40px;
 			}
 		}
 	}
@@ -260,11 +263,11 @@ a:active {
 		@media (min-width: @screen-sm-min) {
 			width: 160px;
 			height: 160px;
-			border-radius: 160px;	
+			border-radius: 160px;
 		}
 		.number{
 			@media (min-width: @screen-sm-min) {
-				font-size: 55px;	
+				font-size: 55px;
 			}
 		}
 	}
@@ -272,11 +275,11 @@ a:active {
 		@media (min-width: @screen-sm-min) {
 			width: 170px;
 			height: 170px;
-			border-radius: 170px;	
+			border-radius: 170px;
 		}
 		.number{
 			@media (min-width: @screen-sm-min) {
-				font-size: 26px;	
+				font-size: 26px;
 			}
 		}
 	}
@@ -287,7 +290,7 @@ a:active {
 			padding: 0 10px 10px;
 			display: table-cell;
 			vertical-align: middle;
-			text-align: center;	
+			text-align: center;
 		}
 		@media (max-width: @screen-xs-max) {
 			.clearfix;
