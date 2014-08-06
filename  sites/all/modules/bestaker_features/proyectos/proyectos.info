@@ -180,3 +180,4 @@ features[variable][] = pathauto_taxonomy_term_categoria_hito_pattern
 features[views_view][] = proyecto_listado_equipo
 features[views_view][] = proyecto_listado_noticias
 features[views_view][] = proyecto_timeline
+project path =  sites/all/modules/bestaker_features
