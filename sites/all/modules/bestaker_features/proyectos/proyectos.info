@@ -31,6 +31,7 @@ dependencies[] = views_bootstrap
 dependencies[] = views_content
 dependencies[] = workbench
 dependencies[] = workbench_moderation
+features[ctools][] = field_group:field_group:1
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = panels:layouts:1
 features[ctools][] = strongarm:strongarm:1
