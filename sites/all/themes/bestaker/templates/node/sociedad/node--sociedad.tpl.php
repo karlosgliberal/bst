@@ -1,10 +1,14 @@
 <article<?php print $attributes; ?> id="ficha-sociedad">
     <div class="container">
       <div class="row">
-        <h1 class="h1"><?php print $node->title ?></h1>
+        <h2 class="titular-con-bestaker center"><?php print $node->title ?></h2>
+        <div class="wrapper-line">
+          <div class="line line-black">&nbsp;</div>
+          <div class="line line-blue">&nbsp;</div>
+        </div>
       </div>
       <div class="row">
-        <div class="col-md-8">
+        <div id="sociedad-descripcion" class="col-md-10 mt20">
           <?php print drupal_render($content['field_sociedad_descripcion']); ?>
           <?php print drupal_render($content['field_sociedad_datos_resumen']); ?>
           <a class="" data-toggle="collapse" data-target="#sociedad-datos-completos">
@@ -13,10 +17,26 @@
           <div id="sociedad-datos-completos" class="collapse">
             <?php print drupal_render($content['field_sociedad_datos_full']); ?>
           </div>
-          <?php print drupal_render($content['field_sociedad_capital']); ?>
-          <?php print drupal_render($content['field_sociedad_socios']); ?>
+
+          <div id="sociedad-capital">
+            <h3 class="titular-con-bestaker center"><?php echo t('Capital');?></h3>
+            <div class="wrapper-line">
+               <div class="line line-black">&nbsp;</div>
+               <div class="line line-blue">&nbsp;</div>
+            </div>
+            <?php print drupal_render($content['field_sociedad_capital']); ?>
+          </div>
+
+          <div id="sociedad-socios">
+            <h3 class="titular-con-bestaker center"><?php echo t('Socios');?></h3>
+            <div class="wrapper-line">
+               <div class="line line-black">&nbsp;</div>
+               <div class="line line-blue">&nbsp;</div>
+            </div>
+             <?php print drupal_render($content['field_sociedad_socios']); ?>
+          </div>  
         </div>
-        <div class="col-md-4">
+        <div class="col-md-2 hidden-xs mt20">
          <div id="sociedad-menu" >
           <ul class="sociedad-menu-items">
             <li class="first active"><a href="#sociedad-descripcion"><?php echo t('Presentación');?></a></li>
