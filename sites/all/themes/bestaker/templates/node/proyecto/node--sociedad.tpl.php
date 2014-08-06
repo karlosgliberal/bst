@@ -17,7 +17,7 @@
         <div class="col-md-4">
          <div id="sociedad-menu" >
           <ul class="sociedad-menu-items">
-            <li class="first leaf active"><a href="#sociedad-descripcion"><?php echo t('Presentación');?></a></li>
+            <li class="first active"><a href="#sociedad-descripcion"><?php echo t('Presentación');?></a></li>
             <li class=""><a href="#sociedad-capital"><?php echo t('Capital');?></a></li>
             <li class=""><a href="#sociedad-socios"><?php echo t('Socios');?></a></li>
             <li class=""><a href="#sociedad-juntas"><?php echo t('Juntas');?></a></li>
