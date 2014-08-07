@@ -8,6 +8,7 @@
         </div>
       </div>
       <div class="row">
+        
         <div id="sociedad-descripcion" class="col-md-10 mt20">
           <?php print drupal_render($content['field_sociedad_descripcion']); ?>
           <?php print drupal_render($content['field_sociedad_datos_resumen']); ?>
