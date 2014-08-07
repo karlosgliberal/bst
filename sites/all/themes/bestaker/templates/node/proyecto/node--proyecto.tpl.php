@@ -52,7 +52,7 @@
       </div>
     </div>
   </div>
-  <div class="container">   
+  <div class="container">
     <div class="row">
       <div class="col-lg-5 col-lg-push-7">
         <div id="follow-invest">
@@ -85,7 +85,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sunt ipsam in neque mollitia laborum reprehenderit quibusdam quis architecto, dolores sit dolorem facilis pariatur repellat, quaerat odio ipsum delectus nulla.
                           </div>
                           <div class="col-md-6">
-                            Aqui view
+                            <?php print views_embed_view('proyecto_listado_de_sociedades','default', $node->nid); ?>
                           </div>
                         </div>
                     </li>
@@ -94,7 +94,7 @@
           </ul>
         </nav>
       </div>
-    </div>    
+    </div>
   </div>
 
   <div class="para-inversor" id="proyecto-descripcion">
