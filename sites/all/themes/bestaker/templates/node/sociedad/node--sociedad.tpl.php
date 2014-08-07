@@ -8,7 +8,7 @@
         </div>
       </div>
       <div class="row">
-        
+
         <div id="sociedad-descripcion" class="col-md-10 mt20">
           <?php print drupal_render($content['field_sociedad_descripcion']); ?>
           <?php print drupal_render($content['field_sociedad_datos_resumen']); ?>
@@ -28,7 +28,8 @@
                  <div class="line line-blue">&nbsp;</div>
               </div>
               <div class="col-md-6 mt20">
-                <?php print drupal_render($content['field_sociedad_grafico_capital']); ?>
+                <span id='columnchart'></span>
+                <?php // print drupal_render($content['field_sociedad_grafico_capital']); ?>
               </div>
               <div class="col-md-6 mt20">
                 <?php print drupal_render($content['field_sociedad_capital']); ?>
