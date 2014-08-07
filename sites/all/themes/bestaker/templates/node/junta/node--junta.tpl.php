@@ -8,8 +8,10 @@
               <div class="line line-black">&nbsp;</div>
               <div class="line line-blue">&nbsp;</div>
             </div>
+            <div class="inner-30">
             <?php print drupal_render($content['field_junta_descripcion']); ?>
             <?php print drupal_render($content['field_junta_adjuntos']); ?>
+          </div>
           </div>
         </div>
       </div>

@@ -27,11 +27,11 @@
                  <div class="line line-black">&nbsp;</div>
                  <div class="line line-blue">&nbsp;</div>
               </div>
-              <div class="col-md-6 mt20">
+              <div class="col-md-6">
                 <span id='columnchart'></span>
                 <?php // print drupal_render($content['field_sociedad_grafico_capital']); ?>
               </div>
-              <div class="col-md-6 mt20">
+              <div class="col-md-6 mt50">
                 <?php print drupal_render($content['field_sociedad_capital']); ?>
               </div>
             </div>
@@ -43,10 +43,10 @@
                    <div class="line line-black">&nbsp;</div>
                    <div class="line line-blue">&nbsp;</div>
                 </div>
-                <div class="col-md-6 mt20">
+                <div class="col-md-6">
                    <?php print drupal_render($content['field_sociedad_grafico_socios']); ?>
                 </div>
-                <div class="col-md-6 mt20">
+                <div class="col-md-6 mt50">
                   <?php print drupal_render($content['field_sociedad_socios']); ?>
                 </div>
             </div>
