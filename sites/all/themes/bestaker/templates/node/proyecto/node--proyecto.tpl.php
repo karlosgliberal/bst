@@ -82,10 +82,10 @@
                     <li class="grid-demo">
                         <div class="row">
                           <div class="col-md-6">
-                            Esto es 6
+                            Aqui explicacion con imagen
                           </div>
                           <div class="col-md-6">
-                            Esto es 6
+                            Aqui view
                           </div>
                         </div>
                     </li>
