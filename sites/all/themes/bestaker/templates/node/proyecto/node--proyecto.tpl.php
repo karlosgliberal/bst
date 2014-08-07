@@ -75,19 +75,24 @@
             <li class="leaf"><a href="#proyecto-equipo"><?php echo t('Equipo');?></a></li>
             <li class="leaf"><a href="#proyecto-noticias"><?php echo t('Noticias');?></a></li>
             <li class="leaf"><a href="#proyecto-dudas"><?php echo t('Dudas');?></a></li>
-            <!-- <li class="leaf"><a href="#proyecto-sociedades"><?php echo t('Sociedades');?></a></li> -->
             <li class="dropdown yamm-fw">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo t('Sociedades');?></a>
                   <ul class="dropdown-menu">
-                    <li class="grid-demo">
+                    <li class="mega-grid">
                         <div class="row">
-                          <div class="col-md-6">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sunt ipsam in neque mollitia laborum reprehenderit quibusdam quis architecto, dolores sit dolorem facilis pariatur repellat, quaerat odio ipsum delectus nulla.<p>
-                              <img class="img-responsive"src="">
-                          </div>
-                          <div class="col-md-6">
-                            <?php print views_embed_view('proyecto_listado_de_sociedades','default', $node->nid); ?>
-                          </div>
+                            <div class="col-md-6">
+                              <div class="mega-inner">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit distinctio.<p>
+                                <img class="img-responsive" src="http://placehold.it/350x150">
+                                <p><a href=""><?php echo t('Más información');?></a><p>
+                              </div>
+                             </div>
+                              <div class="col-md-6">
+                                <div class="mega-inner">
+                                  <?php print views_embed_view('proyecto_listado_de_sociedades','default', $node->nid); ?>
+                                </div>
+                              </div>
+                         </div>
                         </div>
                     </li>
                   </ul>

@@ -11,9 +11,11 @@
         <div id="sociedad-descripcion" class="col-md-10 mt20">
           <?php print drupal_render($content['field_sociedad_descripcion']); ?>
           <?php print drupal_render($content['field_sociedad_datos_resumen']); ?>
-          <a class="" data-toggle="collapse" data-target="#sociedad-datos-completos">
-            <?php echo t('Más información');?>
-          </a>
+          <div class="sociedad-mas-info">
+            <a data-toggle="collapse" data-target="#sociedad-datos-completos">
+              <?php echo t('Más información');?>
+            </a>
+          </div>
           <div id="sociedad-datos-completos" class="collapse">
             <?php print drupal_render($content['field_sociedad_datos_full']); ?>
           </div>
