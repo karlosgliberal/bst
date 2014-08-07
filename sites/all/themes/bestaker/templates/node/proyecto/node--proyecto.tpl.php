@@ -69,20 +69,20 @@
       </div>
       <div class="col-lg-7 col-lg-pull-5 hidden-xs">
         <nav id="project-menu" role="navigation" class="navbar navbar-default">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav yamm">
             <li class="first leaf active"><a href="#proyecto-descripcion"><?php echo t('Descripción del proyecto');?></a></li>
             <li class="leaf"><a href="#proyecto-hitos"><?php echo t('Hitos');?></a></li>
             <li class="leaf"><a href="#proyecto-equipo"><?php echo t('Equipo');?></a></li>
             <li class="leaf"><a href="#proyecto-noticias"><?php echo t('Noticias');?></a></li>
             <li class="leaf"><a href="#proyecto-dudas"><?php echo t('Dudas');?></a></li>
             <!-- <li class="leaf"><a href="#proyecto-sociedades"><?php echo t('Sociedades');?></a></li> -->
-            <li class="dropdown yamm-fullwidth">
+            <li class="dropdown yamm-fw">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo t('Sociedades');?></a>
                   <ul class="dropdown-menu">
                     <li class="grid-demo">
                         <div class="row">
                           <div class="col-md-6">
-                            Aqui explicacion con imagen
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sunt ipsam in neque mollitia laborum reprehenderit quibusdam quis architecto, dolores sit dolorem facilis pariatur repellat, quaerat odio ipsum delectus nulla.
                           </div>
                           <div class="col-md-6">
                             Aqui view
