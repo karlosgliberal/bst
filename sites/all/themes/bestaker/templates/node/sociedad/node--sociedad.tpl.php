@@ -19,24 +19,36 @@
           <div id="sociedad-datos-completos" class="collapse">
             <?php print drupal_render($content['field_sociedad_datos_full']); ?>
           </div>
-
-          <div id="sociedad-capital">
-            <h3 class="titular-con-bestaker center"><?php echo t('Capital');?></h3>
-            <div class="wrapper-line">
-               <div class="line line-black">&nbsp;</div>
-               <div class="line line-blue">&nbsp;</div>
+          <div class="row">
+            <div id="sociedad-capital">
+              <h3 class="titular-con-bestaker center"><?php echo t('Capital');?></h3>
+              <div class="wrapper-line">
+                 <div class="line line-black">&nbsp;</div>
+                 <div class="line line-blue">&nbsp;</div>
+              </div>
+              <div class="col-md-6 mt20">
+                <?php print drupal_render($content['field_sociedad_grafico_capital']); ?>
+              </div>
+              <div class="col-md-6 mt20">
+                <?php print drupal_render($content['field_sociedad_capital']); ?>
+              </div>
             </div>
-            <?php print drupal_render($content['field_sociedad_capital']); ?>
           </div>
-
-          <div id="sociedad-socios">
-            <h3 class="titular-con-bestaker center"><?php echo t('Socios');?></h3>
-            <div class="wrapper-line">
-               <div class="line line-black">&nbsp;</div>
-               <div class="line line-blue">&nbsp;</div>
+          <div class="row">
+            <div id="sociedad-socios">
+                <h3 class="titular-con-bestaker center"><?php echo t('Socios');?></h3>
+                <div class="wrapper-line">
+                   <div class="line line-black">&nbsp;</div>
+                   <div class="line line-blue">&nbsp;</div>
+                </div>
+                <div class="col-md-6 mt20">
+                   <?php print drupal_render($content['field_sociedad_grafico_socios']); ?>
+                </div>
+                <div class="col-md-6 mt20">
+                  <?php print drupal_render($content['field_sociedad_socios']); ?>
+                </div>
             </div>
-             <?php print drupal_render($content['field_sociedad_socios']); ?>
-          </div>  
+          </div>
         </div>
         <div class="col-md-2 hidden-xs mt20">
          <div id="sociedad-menu" >
