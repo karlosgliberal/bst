@@ -5,3 +5,8 @@
  */
 
 include_once 'sociedades.features.inc';
+
+function sociedades_init(){
+  drupal_add_js('https://www.google.com/jsapi', 'external');
+  drupal_add_js(drupal_get_path('module', 'sociedades') . '/sociedades.graficos.js');
+}
