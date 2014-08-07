@@ -82,7 +82,8 @@
                     <li class="grid-demo">
                         <div class="row">
                           <div class="col-md-6">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sunt ipsam in neque mollitia laborum reprehenderit quibusdam quis architecto, dolores sit dolorem facilis pariatur repellat, quaerat odio ipsum delectus nulla.
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio sunt ipsam in neque mollitia laborum reprehenderit quibusdam quis architecto, dolores sit dolorem facilis pariatur repellat, quaerat odio ipsum delectus nulla.<p>
+                              <img class="img-responsive"src="">
                           </div>
                           <div class="col-md-6">
                             <?php print views_embed_view('proyecto_listado_de_sociedades','default', $node->nid); ?>
