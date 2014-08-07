@@ -75,7 +75,22 @@
             <li class="leaf"><a href="#proyecto-equipo"><?php echo t('Equipo');?></a></li>
             <li class="leaf"><a href="#proyecto-noticias"><?php echo t('Noticias');?></a></li>
             <li class="leaf"><a href="#proyecto-dudas"><?php echo t('Dudas');?></a></li>
-            <li class="leaf"><a href="#proyecto-sociedades"><?php echo t('Sociedades');?></a></li>
+            <!-- <li class="leaf"><a href="#proyecto-sociedades"><?php echo t('Sociedades');?></a></li> -->
+            <li class="dropdown yamm-fullwidth">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo t('Sociedades');?></a>
+                  <ul class="dropdown-menu">
+                    <li class="grid-demo">
+                        <div class="row">
+                          <div class="col-md-6">
+                            Esto es 6
+                          </div>
+                          <div class="col-md-6">
+                            Esto es 6
+                          </div>
+                        </div>
+                    </li>
+                  </ul>
+            </li>
           </ul>
         </nav>
       </div>
