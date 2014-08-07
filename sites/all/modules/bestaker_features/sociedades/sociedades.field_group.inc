@@ -24,6 +24,7 @@ function sociedades_field_group_info() {
     'weight' => '8',
     'children' => array(
       0 => 'field_sociedad_capital',
+      1 => 'field_sociedad_grafico_capital',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -79,6 +80,7 @@ function sociedades_field_group_info() {
     'weight' => '9',
     'children' => array(
       0 => 'field_sociedad_socios',
+      1 => 'field_sociedad_grafico_socios',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
