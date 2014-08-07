@@ -1,6 +1,7 @@
 (function ($) {
   Drupal.behaviors.sociedades = {
     attach: function(context, settings) {
+      console.log(context);
       google.load('visualization', '1', {'callback':function(){drawChart();}, 'packages':['corechart']});
       //google.setOnLoadCallback(drawChart);
       function drawChart() {

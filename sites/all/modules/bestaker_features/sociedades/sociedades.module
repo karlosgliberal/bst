@@ -10,3 +10,13 @@ function sociedades_init(){
   drupal_add_js('https://www.google.com/jsapi', 'external');
   drupal_add_js(drupal_get_path('module', 'sociedades') . '/sociedades.graficos.js');
 }
+
+/**
+ * Implements hook_node_view().
+ */
+function sociedades_node_view($node, $view_mode, $langcode) {
+  dpm($node);
+  if($node->type == 'sociedad'){
+  }
+}
+
