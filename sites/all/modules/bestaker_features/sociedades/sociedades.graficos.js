@@ -1,11 +1,11 @@
 (function ($) {
   Drupal.behaviors.sociedades = {
     attach: function(context, settings) {
-      console.log(context);
+      console.log(settings);
       google.load('visualization', '1', {'callback':function(){drawChart();}, 'packages':['corechart']});
       //google.setOnLoadCallback(drawChart);
       function drawChart() {
-        var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/16nCrcrDnX8wJg46w4TCiOZaUiqj8WsMsBZjENyVP3bs/edit?usp=sharing');
+        var query = new google.visualization.Query(settings.sociedad_grafico_capital);
         query.send(handleQueryResponse);
       }
 

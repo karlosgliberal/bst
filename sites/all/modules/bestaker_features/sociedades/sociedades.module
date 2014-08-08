@@ -15,11 +15,10 @@ function sociedades_init(){
  * Implements hook_node_view().
  */
 function sociedades_node_view($node, $view_mode, $langcode) {
-  dpm($node);
   if($node->type == 'sociedad'){
-    dpm('hola');
     $entidad = entity_metadata_wrapper('node', $node);
-    $id_mailchimp = $entidad->field_proyecto_id_mailchimp->value();
+    $url = $entidad->field_sociedad_grafico_capital->url->value();
+    drupal_add_js(array('sociedad_grafico_capital' => $url), 'setting');
   }
 }
 
