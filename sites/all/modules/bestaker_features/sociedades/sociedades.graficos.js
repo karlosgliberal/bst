@@ -17,7 +17,7 @@
           var data = response.getDataTable();
           var options = {
             width: 500,
-            height: 450,
+            height: 500,
             legend: { position: 'top', maxLines: 2 },
             bar: { groupWidth: '75%' },
             isStacked: true,
