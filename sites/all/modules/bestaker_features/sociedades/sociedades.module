@@ -15,10 +15,12 @@ function sociedades_init(){
  * Implements hook_node_view().
  */
 function sociedades_node_view($node, $view_mode, $langcode) {
-  if($node->type == 'sociedad'){
-    $entidad = entity_metadata_wrapper('node', $node);
-    $url = $entidad->field_sociedad_grafico_capital->url->value();
-    drupal_add_js(array('sociedad_grafico_capital' => $url), 'setting');
-  }
+  // if($node->type == 'sociedad'){
+  //   $entidad = entity_metadata_wrapper('node', $node);
+  //   if(isset($entidad->field_sociedad_grafico_capital->url)){
+  //     $url = $entidad->field_sociedad_grafico_capital->url->value();
+  //     drupal_add_js(array('sociedad_grafico_capital' => $url), 'setting');
+  //   }
+  // }
 }
 
