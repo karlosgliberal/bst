@@ -425,13 +425,20 @@ function proyectos_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '12',
         ),
         'language' => array(
           'weight' => '2',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'flag_seguir_proyecto' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__proyecto'] = $strongarm;

@@ -906,6 +906,48 @@ function proyectos_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-proyecto-field_proyecto_cifras'
+  $field_instances['node-proyecto-field_proyecto_cifras'] = array(
+    'bundle' => 'proyecto',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_proyecto_cifras',
+    'label' => 'Cifras clave',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance: 'node-proyecto-field_proyecto_descripcion'
   $field_instances['node-proyecto-field_proyecto_descripcion'] = array(
     'bundle' => 'proyecto',
@@ -986,7 +1028,59 @@ function proyectos_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-proyecto-field_proyecto_fecha_fin_ronda'
+  $field_instances['node-proyecto-field_proyecto_fecha_fin_ronda'] = array(
+    'bundle' => 'proyecto',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'date',
+        'settings' => array(
+          'interval' => 1,
+          'interval_display' => 'raw time hence',
+        ),
+        'type' => 'format_interval',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_proyecto_fecha_fin_ronda',
+    'label' => 'Fecha fin de ronda actual',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_text',
+      'weight' => 6,
     ),
   );
 
@@ -1003,9 +1097,8 @@ function proyectos_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 8,
       ),
       'teaser' => array(
@@ -1045,9 +1138,8 @@ function proyectos_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 7,
       ),
       'teaser' => array(
@@ -1121,7 +1213,7 @@ function proyectos_field_default_field_instances() {
         'progress_indicator' => 'bar',
       ),
       'type' => 'image_image',
-      'weight' => 6,
+      'weight' => 9,
     ),
   );
 
@@ -1173,7 +1265,7 @@ function proyectos_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 7,
+      'weight' => 10,
     ),
   );
 
@@ -1217,6 +1309,48 @@ function proyectos_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-proyecto-field_proyecto_ronda'
+  $field_instances['node-proyecto-field_proyecto_ronda'] = array(
+    'bundle' => 'proyecto',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_plain',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'fences_wrapper' => 'no_wrapper',
+    'field_name' => 'field_proyecto_ronda',
+    'label' => 'Ronda actual',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
       'weight' => 5,
     ),
   );
@@ -1327,6 +1461,7 @@ function proyectos_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Cargo');
   t('Categoría');
+  t('Cifras clave');
   t('Control de acceso');
   t('Descripción corta');
   t('Descripción corta del proyecto, esta descripción se verá en la portada del Portal y en el deepbanner de la ficha del proyecto');
@@ -1337,6 +1472,7 @@ function proyectos_field_default_field_instances() {
   t('Entradilla');
   t('Fecha');
   t('Fecha de aparición de la noticia.');
+  t('Fecha fin de ronda actual');
   t('Ficha en PDF');
   t('Fichero explicativo del proyecto en formato PDF');
   t('Foto');
@@ -1355,6 +1491,7 @@ function proyectos_field_default_field_instances() {
   t('Proyecto');
   t('Resumen');
   t('Resumen puesto');
+  t('Ronda actual');
   t('Twitter');
   t('URL');
   t('URL de cuenta de twitter. Incluir http://');

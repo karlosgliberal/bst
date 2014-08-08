@@ -13,47 +13,38 @@
           </div>
         </div>
         <div class="col-sm-7 col-md-8 col-lg-7">
-          <div id="inversion-minima" class="circle xs">
-            <div class="wrapper">
-              <strong class="number">300€</strong>
-              <p><strong>Inversión</strong> mínima requerida</p>
-            </div>
-          </div>
-          <div id="rentabilidad-prevista-2018" class="circle md">
-            <div class="wrapper">
-              <strong class="number">27x</strong>
-              <p><strong>Rentabilidad</strong> prevista por dividendos <strong>2018</strong></p>
-            </div>
-          </div>
-          <div id="rentabilidad-prevista-2017" class="circle sm">
-            <div class="wrapper">
-              <strong class="number">7.5x</strong>
-              <p><strong>Rentabilidad</strong> prevista por dividendos <strong>2017</strong></p>
-            </div>
-          </div>
-          <div id="numero-inversores" class="circle sm">
-            <div class="wrapper">
-              <strong class="number">55</strong>
-              <p><strong>Inversores</strong> han participado</p>
-            </div>
-          </div>
-          <div id="capital-captado" class="circle lg">
-            <div class="wrapper">
-              <strong class="number">120.000€</strong>
-              <p>de <strong>capital captado</strong></p>
-            </div>
-          </div>
+          <?php print drupal_render($content['field_proyecto_cifras']); ?>
         </div>
       </div>
     </div>
     <div id="ronda-inversion">
       <div class="container">
-        <p><span class="h2"><strong>7ª</strong> ronda de inversión</span> Quedan <strong>12 días</strong> para que finalice este tramo <span class="glyphicon glyphicon-info-sign"></span></p>
+        <p>
+          <span class="h2">
+            <strong><?php print drupal_render($content['field_proyecto_ronda']); ?></strong>
+            <?php print t('ronda de inversión'); ?>
+          </span>
+          <?php
+            if (proyectos_ronda_terminada($node)) {
+              print t('Ronda cerrada');
+            } else {
+              print t('Quedan <strong>!num_dias</strong> para que finalice este tramo',
+                array('!num_dias' => drupal_render($content['field_proyecto_fecha_fin_ronda'])));
+            }
+          ?>
+
+          <span class="glyphicon glyphicon-info-sign"
+                data-container="body"
+                data-toggle="popover"
+                data-placement="top"
+                data-content="<?php print t('Mostrará un texto que explique en que consisten los tramos y podrá incluir un enlace al Centro de ayuda para ampliar información');?>">
+          </span>
+        </p>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
+  <div class="container" >
+    <div class="row menu-proyecto" data-spy="affix" data-offset-top="532">
       <div class="col-lg-5 col-lg-push-7">
         <div id="follow-invest">
           <div class="row">
@@ -102,15 +93,18 @@
       </div>
     </div>
   </div>
+  <?php
+  $node_view = menu_get_object();
+  if ($node_view && isset($node_view->nid) && $node_view->type == 'proyecto'): ?>
+    <div class="para-inversor" id="proyecto-descripcion">
+      <div class="container">
 
-  <div class="para-inversor" id="proyecto-descripcion">
-    <div class="container">
+        <?php print drupal_render($content['field_proyecto_descripcion_larga']); ?>
 
-      <?php print drupal_render($content['field_proyecto_descripcion_larga']); ?>
-
-      <a class="btn btn-sm btn-default pull-right" href="<?php print drupal_render($content['field_proyecto_pdf']); ?>">
-          <span class="glyphicon glyphicon-download-alt"></span>  <?php echo t('Download Project Datasheet'); ?>
-        </a>
+        <a class="btn btn-sm btn-default pull-right" href="<?php print drupal_render($content['field_proyecto_pdf']); ?>">
+            <span class="glyphicon glyphicon-download-alt"></span>  <?php echo t('Download Project Datasheet'); ?>
+          </a>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 </article>
