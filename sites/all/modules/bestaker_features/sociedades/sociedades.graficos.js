@@ -2,7 +2,7 @@
   Drupal.behaviors.sociedades = {
     attach: function(context, settings) {
       if(settings.sociedad_grafico_capital !== undefined){
-        google.load('visualization', '1', {'callback':function(){drawChart();}, 'packages':['corechart']});
+        google.load('visualization', '1', {'callback':function(){ drawChart();}, 'packages':['corechart']});
         //google.setOnLoadCallback(drawChart);
         function drawChart() {
           var query = new google.visualization.Query(settings.sociedad_grafico_capital);
@@ -15,6 +15,8 @@
             return;
           }
           var data = response.getDataTable();
+              console.log(response);
+          console.log(data);
           var options = {
             width: 500,
             height: 450,
