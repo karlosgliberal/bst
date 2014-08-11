@@ -65,3 +65,8 @@ function proyectos_suscribir_lista($id_lista, $account, $valor_grupo, $entity_id
   );
   $ret = mailchimp_subscribe($id_lista, $user->mail, $merge_preparado, FALSE, FALSE, 'html', false, TRUE);
 }
+
+function proyectos_ronda_terminada ($node) {
+  $hoy = date("Y-m-d") . " 23:59:59";
+  return ($hoy > $node->field_proyecto_fecha_fin_ronda['und'][0]['value']);
+}

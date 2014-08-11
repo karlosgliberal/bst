@@ -3,6 +3,18 @@
  * @file
  * template.php
  */
+function bestaker_preprocess_html(&$variables) {
+  $node = menu_get_object();
+  if ($node && isset($node->nid) && $node->type == 'proyecto'){
+    $variables['attributes_array']['data-spy'] = "scroll";
+    $variables['attributes_array']['data-target'] = ".navbar-default";
+  }
+}
+
+/**
+ * @file
+ * template.php
+ */
 function bestaker_preprocess_page(&$variables) {
   if (!drupal_is_front_page()) {
     $variables['primary_nav'] = FALSE; //menu_tree(variable_get('menu_main_links_source', 'main-menu'));

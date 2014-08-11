@@ -21,10 +21,10 @@ function proyectos_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Mailchimp',
-    'weight' => '13',
+    'weight' => '11',
     'children' => array(
-      0 => 'field_proyecto_id_mailchimp',
-      1 => 'field_proyecto_grupo_mailchimp',
+      0 => 'field_proyecto_grupo_mailchimp',
+      1 => 'field_proyecto_id_mailchimp',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

@@ -9,4 +9,5 @@
       </li>
     <?php endforeach; ?>
   </ul>
+  <a class="btn btn-blue pull-right" href="/extranet"><?php print t('Ver más hitos');?></a>
 </div>
